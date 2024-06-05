@@ -1,48 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Title Here</title>
-    <style>
-        /* Your CSS styles go here */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        /* Add more styles as needed */
-        .container {
-            width: 80%;
-            margin: 20px auto;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+  <head>
+    <title>Portfolio</title>
+    <meta property="og:title" content="Portfolio" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
     </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to Your Website</h1>
-    </header>
-    <div class="container">
-        <h2>Main Content Area</h2>
-        <p>This is where your main content will go.</p>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background-color: var(--dl-color-theme-neutral-light);
+
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./index.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <header class="navbar8-container navbar8-root-class-name">
+          <div class="navbar8-container1">
+            <a
+              href="index.html"
+              class="navbar8-navlink button thq-button-filled"
+            >
+              <span>About Me</span>
+            </a>
+            <a href="page.html" class="navbar8-button thq-button-flat button">
+              <span>Portfolio</span>
+            </a>
+          </div>
+        </header>
+        <div class="home-container1">
+          <h1 class="home-text">
+            <span>Christoph Maureder</span>
+            <br />
+          </h1>
+        </div>
+        <div
+          class="features24-container thq-section-padding features24-root-class-name"
+        >
+          <div class="features24-container1">
+            <div class="features24-container2">
+              <h2 class="features24-text"><span>Gameplay Coder</span></h2>
+            </div>
+            <div class="features24-container3">
+              <h2 class="features24-text1"><span>Content Designer</span></h2>
+            </div>
+            <div class="features24-container4">
+              <h2 class="features24-text2"><span>Curious Human</span></h2>
+            </div>
+          </div>
+        </div>
+        <div
+          class="steps2-container thq-section-padding steps2-root-class-name"
+        >
+          <div class="steps2-max-width thq-section-max-width">
+            <div class="steps2-container1 thq-grid-2">
+              <div class="steps2-section-header">
+                <h2 class="steps2-text thq-heading-2">
+                  <span>My Game development experiences</span>
+                  <br />
+                </h2>
+                <p class="steps2-text03 thq-body-large">
+                  My main game development journey started two years ago, but I
+                  had some experience with game development before my time at
+                  university. At university, my main focus was coding games
+                  since I was already proficient at that, and I tried to learn
+                  as much as possible about game design, specifically system and
+                  content design. Before Uni, I created some smaller 2d
+                  platformers, and for my diploma thesis, I coded a VR
+                  Simulation of a message transmission between two phones.
+                </p>
+              </div>
+              <div class="steps2-container2">
+                <div class="steps2-container3 thq-card">
+                  <h2 class="steps2-text04 thq-heading-2">
+                    <span>Gameplay Coding</span>
+                  </h2>
+                  <span class="steps2-text05 thq-body-small">
+                    <span>
+                      Over the last two years, I have developed multiple games
+                      from the ground up, coding everything from custom 2D
+                      movement and colliders to a modular ability creation
+                      system that non-coders can use.
+                    </span>
+                  </span>
+                </div>
+                <div class="steps2-container4 thq-card">
+                  <h2 class="steps2-text06 thq-heading-2">
+                    <span>System Design</span>
+                  </h2>
+                  <span class="steps2-text07 thq-body-small">
+                    <span>
+                      I provided input on design decisions for all my games,
+                      contributing to the design team for mechanics and systems
+                      where I helped create the game's overarching mechanic set.
+                    </span>
+                  </span>
+                </div>
+                <div class="steps2-container5 thq-card">
+                  <h2 class="steps2-text08 thq-heading-2">
+                    <span>Idea Finding</span>
+                  </h2>
+                  <span class="steps2-text09 thq-body-small">
+                    <span>
+                      I was part of the idea-finding process for every game I
+                      worked on, collaborating with multiple people to create
+                      exciting ideas and mechanics for new games.
+                    </span>
+                  </span>
+                </div>
+                <div class="steps2-container6 thq-card">
+                  <h2 class="steps2-text10 thq-heading-2">
+                    <span>More Coding Experience</span>
+                  </h2>
+                  <span class="steps2-text11 thq-body-small">
+                    <span>
+                      Before studying game design, I attended one of Australia's
+                      top IT high schools, where I gained five years of
+                      experience learning multiple coding languages and standard
+                      software engineering best practices.
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="thq-section-padding features25-root-class-name">
+          <div class="features25-container1 thq-section-max-width">
+            <div class="features25-tabs-menu">
+              <div class="features25-tab-horizontal">
+                <div class="features25-divider-container">
+                  <div class="features25-container2"></div>
+                </div>
+                <div class="features25-content">
+                  <h2 class="features25-feature1-title thq-heading-2">
+                    <span>Coding and Design</span>
+                  </h2>
+                  <span class="features25-feature1-description thq-body-small">
+                    <span>
+                      I have been coding for seven years and have two years of
+                      experience in game design. My combined skills in coding
+                      and design allow me to approach technical problems with
+                      design in mind and vice versa. I am also flexible and can
+                      switch between coding and design tasks to help where I am
+                      needed most.
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <div class="features25-tab-horizontal1">
+                <div class="features25-divider-container1">
+                  <div class="features25-container3"></div>
+                </div>
+                <div class="features25-content1">
+                  <h2 class="features25-feature2-title thq-heading-2">
+                    <span>Start fast and adapted</span>
+                  </h2>
+                  <span class="features25-feature2-description thq-body-small">
+                    <span>
+                      When I develop games, I enjoy using this approach. Rapid
+                      prototyping and efficient iterating, testing, and refining
+                      ideas have always been better than theory-crafting for
+                      ages.
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <div class="features25-tab-horizontal2">
+                <div class="features25-divider-container2">
+                  <div class="features25-container4"></div>
+                </div>
+                <div class="features25-content2">
+                  <h2 class="features25-feature3-title thq-heading-2">
+                    <span>Communication</span>
+                  </h2>
+                  <span class="features25-feature3-description thq-body-small">
+                    <span>
+                      I really enjoy communicating while working. It's great to
+                      have someone to bounce ideas off for game mechanics or
+                      discuss how to implement them into the code. It keeps
+                      things flowing smoothly and makes the work better.
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="features25-image-container">
+              <img
+                alt="feature 1"
+                src="https://images.unsplash.com/photo-1626282874430-c11ae32d2898?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDE1NHx8YWJzdHJhY3R8ZW58MHx8fHwxNzE2MjAxNjAyfDA&amp;ixlib=rb-4.0.3&amp;w=1400"
+                class="features25-image thq-img-ratio-16-9"
+              />
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1505356822725-08ad25f3ffe4?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDQ3fHxhYnN0cmFjdHxlbnwwfHx8fDE3MTYyMDEzMDd8MA&amp;ixlib=rb-4.0.3&amp;w=1400"
+                class="features25-image1 thq-img-ratio-16-9"
+              />
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1618172193622-ae2d025f4032?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDg0fHxhYnN0cmFjdHxlbnwwfHx8fDE3MTYyMDE1NTZ8MA&amp;ixlib=rb-4.0.3&amp;w=1400"
+                class="features25-image2 thq-img-ratio-16-9"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="thq-section-padding cta26-root-class-name">
+          <div class="thq-section-max-width">
+            <div class="cta26-accent2-bg">
+              <div class="cta26-accent1-bg">
+                <div class="cta26-content">
+                  <span class="cta26-text thq-heading-2">
+                    <span>Sounds good so far? Let's connect!</span>
+                  </span>
+                  <p class="cta26-text1 thq-body-large">
+                    <span>
+                      You can send me an email to maureder.christoph@gmail.com
+                      or message me on LinkedIn
+                    </span>
+                  </p>
+                </div>
+                <div class="cta26-actions">
+                  <a
+                    href="https://www.linkedin.com/in/christoph-maureder"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="cta26-link thq-button-filled"
+                  >
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="thq-section-padding testimonial17-root-class-name">
+          <div class="testimonial17-max-width thq-section-max-width">
+            <div class="testimonial17-container">
+              <h2 class="thq-heading-2"><span>Testimonials</span></h2>
+              <span class="testimonial17-text01 thq-body-small">
+                <span></span>
+              </span>
+            </div>
+            <div class="thq-grid-2">
+              <div class="testimonial17-accent2-bg thq-animated-card-bg-2">
+                <div class="testimonial17-accent1-bg thq-animated-card-bg-1">
+                  <div data-animated="true" class="thq-card testimonial17-card">
+                    <div class="testimonial17-container02">
+                      <div class="testimonial17-container03">
+                        <strong class="testimonial17-text02 thq-body-large">
+                          <span>TheStone</span>
+                        </strong>
+                        <span class="testimonial17-text03 thq-body-small">
+                          <span>My friend</span>
+                        </span>
+                      </div>
+                    </div>
+                    <span class="testimonial17-text04 thq-body-small">
+                      <span>
+                        Christoph is super creative, and it's always great to
+                        bounce game and mechanic ideas off him. He's always so
+                        enthusiastic about new projects.
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial17-accent2-bg1 thq-animated-card-bg-2">
+                <div class="testimonial17-accent1-bg1 thq-animated-card-bg-1">
+                  <div
+                    data-animated="true"
+                    class="thq-card testimonial17-card1"
+                  >
+                    <div class="testimonial17-container04">
+                      <div class="testimonial17-container05">
+                        <strong class="testimonial17-text05 thq-body-large">
+                          <span>Ollmie</span>
+                        </strong>
+                        <span class="testimonial17-text06 thq-body-small">
+                          <span>My other friend</span>
+                        </span>
+                      </div>
+                    </div>
+                    <span class="testimonial17-text07 thq-body-small">
+                      <span>
+                        Working with Christoph on a project was very enjoyable.
+                        He isn't afraid to try new things and doesn't get
+                        discouraged when something doesn't work out, and we need
+                        to start over.
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial17-accent2-bg2 thq-animated-card-bg-2">
+                <div class="testimonial17-accent1-bg2 thq-animated-card-bg-1">
+                  <div
+                    data-animated="true"
+                    class="thq-card testimonial17-card2"
+                  >
+                    <div class="testimonial17-container06">
+                      <div class="testimonial17-container07">
+                        <strong class="testimonial17-text08 thq-body-large">
+                          <span>Your name</span>
+                        </strong>
+                        <span class="testimonial17-text09 thq-body-small">
+                          <span>This could be you</span>
+                        </span>
+                      </div>
+                    </div>
+                    <span class="testimonial17-text10 thq-body-small">
+                      <span>
+                        I do not regret hiring Christoph. He is hard-working and
+                        enjoys working in a team setting. While he is a bit
+                        reserved, he makes up for it by giving it 110% effort.
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial17-accent2-bg3 thq-animated-card-bg-2">
+                <div class="testimonial17-accent1-bg3 thq-animated-card-bg-1">
+                  <div
+                    data-animated="true"
+                    class="thq-card testimonial17-card3"
+                  >
+                    <div class="testimonial17-container08">
+                      <div class="testimonial17-container09">
+                        <strong class="testimonial17-text11 thq-body-large">
+                          <span>My Mom</span>
+                        </strong>
+                        <span class="testimonial17-text12 thq-body-small">
+                          <span>Gave birth to me</span>
+                        </span>
+                      </div>
+                    </div>
+                    <span class="testimonial17-text13 thq-body-small">
+                      <span>
+                        He is a very special kid! He always solves my tech
+                        problems, so you should definitely hire him for every
+                        job!
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <footer>
-        <p>&copy; 2024 Your Website. All rights reserved.</p>
-    </footer>
-</body>
+  </body>
 </html>
