@@ -18,10 +18,14 @@
   width: auto;
   height: var(--dl-size-size-small);
   padding: 0px;
+  transition: 0.3s;
   border-color: var(--dl-color-colors-p2);
   border-width: 0px;
   border-radius: 0px;
   text-decoration: none;
+  background-color: var(--dl-color-colors-p2);
+}
+.navbar8-navlink:hover {
   background-color: var(--dl-color-colors-p2);
 }
 .navbar8-button {
@@ -31,11 +35,15 @@
   width: auto;
   height: var(--dl-size-size-small);
   padding: 0px;
+  transition: 0.3s;
   border-color: var(--dl-color-colors-p2);
   border-width: 0px;
   border-radius: 0px;
   text-decoration: none;
   background-color: transparent;
+}
+.navbar8-button:hover {
+  background-color: var(--dl-color-colors-a1);
 }
 .navbar8-root-class-name {
   background-color: var(--dl-color-colors-b1);
