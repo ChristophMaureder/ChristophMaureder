@@ -1,24 +1,80 @@
+@font-face {
+  font-family: "Raleway-Bold";
+  font-style: normal;
+  font-format: truetype;
+  font-weight: 700;
+  src: url("public/fonts/raleway-bold.ttf") ;
+}
+@font-face {
+  font-family: "Raleway-ExtraLight";
+  font-style: normal;
+  font-format: truetype;
+  font-weight: 250;
+  src: url("public/fonts/raleway-extralight.ttf") ;
+}
+@font-face {
+  font-family: "Raleway-Thin";
+  font-style: normal;
+  font-format: truetype;
+  font-weight: 250;
+  src: url("public/fonts/raleway-thin.ttf") ;
+}
+@font-face {
+  font-family: "Raleway-ExtraBold";
+  font-style: normal;
+  font-format: truetype;
+  font-weight: 800;
+  src: url("public/fonts/raleway-extrabold.ttf") ;
+}
+@font-face {
+  font-family: "Raleway-ThinItalic";
+  font-style: italic;
+  font-format: truetype;
+  font-weight: 100;
+  src: url("public/fonts/raleway-italic-variablefont_wght.ttf") ;
+}
+@font-face {
+  font-family: "Raleway-Light";
+  font-style: normal;
+  font-format: truetype;
+  font-weight: 300;
+  src: url("public/fonts/raleway-light.ttf") ;
+}
+@font-face {
+  font-family: "Raleway-Italic";
+  font-style: italic;
+  font-format: truetype;
+  font-weight: 400;
+  src: url("public/fonts/raleway-italic.ttf") ;
+}
+@font-face {
+  font-family: "Raleway-Medium";
+  font-style: normal;
+  font-format: truetype;
+  font-weight: 500;
+  src: url("public/fonts/raleway-medium.ttf") ;
+}
+@font-face {
+  font-family: "Raleway-Regular";
+  font-style: normal;
+  font-format: truetype;
+  font-weight: 400;
+  src: url("public/fonts/raleway-regular.ttf") ;
+}
 :root {
-  --dl-color-colors-a1: #00bfa5ff;
-  --dl-color-colors-a2: #b39ddbff;
-  --dl-color-colors-b1: #fff9c4ff;
-  --dl-color-colors-b2: #e0e0e0ff;
-  --dl-color-colors-p1: #fff176ff;
-  --dl-color-colors-p2: #ff6f61ff;
   --dl-size-size-large: 144px;
   --dl-size-size-small: 48px;
   --dl-size-size-medium: 96px;
   --dl-size-size-xlarge: 192px;
   --dl-size-size-xsmall: 16px;
   --dl-space-space-unit: 16px;
-  --dl-color-colors-text: #333333ff;
   --dl-size-size-xxlarge: 288px;
   --dl-size-size-maxwidth: 1400px;
-  --dl-color-theme-accent1: #C9B9A2;
-  --dl-color-theme-accent2: #B7A976;
+  --dl-color-theme-accent1: #9b59b6ff;
+  --dl-color-theme-accent2: #26282bff;
   --dl-radius-radius-round: 50%;
-  --dl-color-theme-primary1: #658352;
-  --dl-color-theme-primary2: #94A687;
+  --dl-color-theme-primary1: #ecf0f1ff;
+  --dl-color-theme-primary2: #3498dbff;
   --dl-space-space-halfunit: 8px;
   --dl-space-space-sixunits: 96px;
   --dl-space-space-twounits: 32px;
@@ -27,12 +83,12 @@
   --dl-radius-radius-radius8: 8px;
   --dl-space-space-fiveunits: 80px;
   --dl-space-space-fourunits: 64px;
-  --dl-color-theme-secondary1: #E9E7DE;
-  --dl-color-theme-secondary2: #F5F4ED;
+  --dl-color-theme-secondary1: #2ecc71ff;
+  --dl-color-theme-secondary2: #e67e22ff;
   --dl-space-space-threeunits: 48px;
-  --dl-color-theme-neutral-dark: #1E2203;
+  --dl-color-theme-neutral-dark: #1c1a1aff;
   --dl-radius-radius-cardradius: 8px;
-  --dl-color-theme-neutral-light: #FBF9EF;
+  --dl-color-theme-neutral-light: #2d3339ff;
   --dl-radius-radius-imageradius: 8px;
   --dl-radius-radius-inputradius: 24px;
   --dl-radius-radius-buttonradius: 24px;
@@ -123,8 +179,8 @@
 }
 .thq-button-outline {
   gap: var(--dl-space-space-halfunit);
-  fill: var(--dl-color-colors-a2);
-  color: var(--dl-color-colors-a2);
+  fill: var(--dl-color-theme-primary1);
+  color: var(--dl-color-theme-primary1);
   border: 1px solid;
   cursor: pointer;
   display: flex;
@@ -133,14 +189,19 @@
   font-weight: bold;
   padding-top: var(--dl-space-space-halfunit);
   white-space: nowrap;
-  border-color: var(--dl-color-colors-p2);
+  border-color: var(--dl-color-theme-primary1);
   padding-left: var(--dl-space-space-oneandhalfunits);
   border-radius: var(--dl-radius-radius-buttonradius);
   padding-right: var(--dl-space-space-oneandhalfunits);
   padding-bottom: var(--dl-space-space-halfunit);
   justify-content: center;
 }
-
+.thq-button-outline:hover {
+  fill: var(--dl-color-theme-secondary2);
+  color: var(--dl-color-theme-secondary2);
+  border-color: var(--dl-color-theme-primary2);
+  background-color: var(--dl-color-theme-primary2);
+}
 .thq-button-flat {
   gap: var(--dl-space-space-halfunit);
   fill: var(--dl-color-theme-primary1);
@@ -168,30 +229,30 @@
 }
 .thq-heading-1 {
   font-size: 48px;
-  font-family: Cabin;
+  font-family: STIX Two Text;
   font-weight: 700;
   line-height: 1.5;
 }
 .thq-heading-2 {
   font-size: 35px;
-  font-family: Cabin;
+  font-family: STIX Two Text;
   font-weight: 600;
   line-height: 1.5;
 }
 .thq-heading-3 {
   font-size: 26px;
-  font-family: Cabin;
+  font-family: STIX Two Text;
   font-weight: 600;
   line-height: 1.5;
 }
 .thq-body-large {
   font-size: 18px;
-  font-family: Cabin;
+  font-family: Noto Sans;
   line-height: 1.5;
 }
 .thq-body-small {
   font-size: 16px;
-  font-family: Cabin;
+  font-family: Noto Sans;
   line-height: 1.5;
 }
 .thq-team-image-round {
@@ -257,8 +318,7 @@
 }
 .thq-grid-6 {
   display: grid;
-  grid-gap: var(--dl-space-space-twounits);
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .thq-grid-5 {
   display: grid;
@@ -284,7 +344,7 @@
 .thq-grid-4 {
   display: grid;
   grid-gap: var(--dl-space-space-twounits);
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .thq-grid-2 {
   width: 100%;
@@ -435,7 +495,6 @@
   position: relative;
   border-width: 2px;
 }
-
 .thq-input::placeholder {
   text-align: center;
   vertical-align: middle;
@@ -473,15 +532,29 @@
   z-index: -1;
   transform: scaleX(1);
 }
+.navbar {
+  width: 100%;
+  display: flex;
+  position: sticky;
+  align-items: center;
+  padding-top: var(--dl-space-space-twounits);
+  padding-left: var(--dl-space-space-threeunits);
+  padding-right: var(--dl-space-space-threeunits);
+  padding-bottom: var(--dl-space-space-twounits);
+}
 .Content {
   font-size: 16px;
-  font-family: Inter;
+  font-family: "Raleway-Regular";
   font-weight: 400;
   line-height: 1.15;
   text-transform: none;
   text-decoration: none;
 }
+
 @media(max-width: 991px) {
+  .thq-grid-6 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   .thq-grid-4 {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -497,8 +570,7 @@
     gap: var(--dl-space-space-oneandhalfunits);
   }
   .thq-grid-6 {
-    grid-gap: var(--dl-space-space-oneandhalfunits);
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   .thq-grid-5 {
     grid-gap: var(--dl-space-space-oneandhalfunits);
@@ -523,6 +595,10 @@
   .thq-img-scale {
     width: 100%;
   }
+  .navbar {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
 }
 @media(max-width: 479px) {
   .thq-section-padding {
@@ -535,7 +611,6 @@
     gap: var(--dl-space-space-unit);
   }
   .thq-grid-6 {
-    grid-gap: var(--dl-space-space-unit);
     grid-template-columns: 1fr 1fr;
   }
   .thq-grid-5 {
@@ -558,5 +633,9 @@
   }
   .thq-grid-auto-300 {
     grid-template-columns: 1fr;
+  }
+  .navbar {
+    padding: var(--dl-space-space-unit);
+    padding-right: 16px;
   }
 }

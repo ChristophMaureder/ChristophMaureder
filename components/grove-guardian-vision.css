@@ -1,0 +1,56 @@
+.grove-guardian-vision-layout300 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.grove-guardian-vision-max-width {
+  gap: var(--dl-space-space-threeunits);
+  align-items: center;
+}
+.grove-guardian-vision-section-title {
+  align-items: center;
+}
+.grove-guardian-vision-fragment1 {
+  display: contents;
+}
+.grove-guardian-vision-text12 {
+  fill: var(--dl-color-theme-primary1);
+  color: var(--dl-color-theme-primary1);
+  display: inline-block;
+  font-family: "Raleway-Regular";
+  letter-spacing: 1.5px;
+}
+.grove-guardian-vision-fragment2 {
+  display: contents;
+}
+.grove-guardian-vision-text18 {
+  fill: var(--dl-color-theme-primary1);
+  color: var(--dl-color-theme-primary1);
+  display: inline-block;
+  font-size: 40px;
+  font-family: "Raleway-Regular";
+}
+
+@media(max-width: 991px) {
+  .grove-guardian-vision-section-title {
+    width: 100%;
+  }
+}
+@media(max-width: 767px) {
+  .grove-guardian-vision-section-title {
+    width: auto;
+  }
+  .grove-guardian-vision-text18 {
+    text-align: center;
+  }
+}
+@media(max-width: 479px) {
+  .grove-guardian-vision-max-width {
+    gap: var(--dl-space-space-oneandhalfunits);
+  }
+}

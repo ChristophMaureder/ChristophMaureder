@@ -1,0 +1,67 @@
+.rune-run-header-header23 {
+  background-color: var(--dl-color-theme-neutral-dark);
+}
+.rune-run-header-max-width {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+}
+.rune-run-header-content {
+  gap: var(--dl-space-space-oneandhalfunits);
+  display: flex;
+  max-width: 1000px;
+  align-self: stretch;
+  align-items: center;
+  flex-direction: column;
+}
+.rune-run-header-fragment1 {
+  display: contents;
+}
+.rune-run-header-text12 {
+  fill: var(--dl-color-theme-primary1);
+  color: var(--dl-color-theme-primary1);
+  display: inline-block;
+  font-size: 150px;
+  text-align: center;
+  font-family: "Raleway-Light";
+}
+.rune-run-header-fragment2 {
+  display: contents;
+}
+.rune-run-header-text15 {
+  fill: var(--dl-color-theme-primary1);
+  color: var(--dl-color-theme-primary1);
+  display: inline-block;
+  font-size: 30px;
+  text-align: center;
+  font-family: "Raleway-Medium";
+}
+
+@media(max-width: 1200px) {
+  .rune-run-header-text12 {
+    font-size: 120px;
+    font-family: Raleway-Light;
+  }
+  .rune-run-header-text15 {
+    text-align: center;
+  }
+}
+@media(max-width: 991px) {
+  .rune-run-header-text12 {
+    font-size: 120px;
+  }
+}
+@media(max-width: 767px) {
+  .rune-run-header-text12 {
+    font-size: 90px;
+  }
+}
+@media(max-width: 479px) {
+  .rune-run-header-text12 {
+    font-size: 75px;
+  }
+  .rune-run-header-text15 {
+    text-align: center;
+  }
+}
