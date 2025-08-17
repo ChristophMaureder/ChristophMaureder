@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project — Game Design Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Project details page.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="back-link" aria-label="Back to projects">← Back</a>
+      <h1 class="brand small">
+        <svg class="pacman" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="48" fill="currentColor"></circle>
+          <polygon points="50,50 100,25 100,75" fill="var(--bg)"></polygon>
+        </svg>
+        <span>hristoph Maureder</span>
+      </h1>
+    </div>
+  </header>
+
+  <main class="container" id="content" aria-live="polite">
+    <p class="muted">Loading project…</p>
+  </main>
+
+  <section class="contact-cta" aria-labelledby="contact-title">
+    <div class="container">
+      <h2 id="contact-title">Want to know more? Let’s chat!</h2>
+      <p class="muted">Feel free to reach out if you’d like more information about the game.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://www.linkedin.com/in/christoph-maureder" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn js-copy-email" href="#" data-email="maureder.christoph@gmail.com">Copy Email!</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Christoph Maureder</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function getParam(name) {
+      const params = new URLSearchParams(location.search);
+      return params.get(name);
+    }
+
+    async function loadProjects() {
+      const res = await fetch('projects.json');
+      if (!res.ok) throw new Error('Failed to load projects.json');
+      return await res.json();
+    }
+
+    function renderProject(p) {
+      const el = document.getElementById('content');
+      if (!p) {
+        el.innerHTML = '<h1>Project not found</h1><p>Check the link or go back to the <a href="index.html">overview</a>.</p>';
+        return;
+      }
+
+      document.title = p.title + ' — Project';
+      el.innerHTML = `
+        <article class="project" id="project" data-slug="${p.slug}">
+          <header class="project-hero">
+            <img class="hero" src="${p.coverImage || 'assets/placeholder.svg'}" alt="${p.title} hero">
+            <div class="hero-text">
+              <h1>${p.title}</h1>
+              ${p.subtitle ? `<p class="tagline">${p.subtitle}</p>` : ''}
+              <div class="tags">${(p.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}</div>
+            </div>
+          </header>
+
+          <section class="project-body">
+            <aside class="project-meta">
+              <h2>Overview</h2>
+              <ul>
+                ${p.year ? `<li><strong>Year:</strong> ${p.year}</li>` : ''}
+                ${p.duration ? `<li><strong>Duration:</strong> ${p.duration}</li>` : ''}
+                ${p.teamSize ? `<li><strong>Team size:</strong> ${p.teamSize}</li>` : ''}
+                ${p.role ? `<li><strong>Role:</strong> ${p.role}</li>` : ''}
+                ${p.tools ? `<li><strong>Tools:</strong> ${p.tools.join(', ')}</li>` : ''}
+              </ul>
+              ${p.links ? `
+                <div class="links">
+                  ${p.links.github ? `<a class="btn" href="${p.links.github}" target="_blank" rel="noopener">GitHub</a>` : ''}
+                  ${p.links.itch ? `<a class="btn" href="${p.links.itch}" target="_blank" rel="noopener">itch.io</a>` : ''}
+                  ${p.links.steam ? `<a class="btn" href="${p.links.steam}" target="_blank" rel="noopener">Steam</a>` : ''}
+                  ${p.links.designDoc ? `<a class="btn" href="${p.links.designDoc}" target="_blank" rel="noopener">Design Doc</a>` : ''}
+                </div>` : ''}
+            </aside>
+
+            <div class="project-content">
+              ${p.longDescription ? p.longDescription.split('\n').map(par => `<p>${par}</p>`).join('') : ''}
+              ${p.responsibilities ? `
+                <h2>My Contributions</h2>
+                <ul class="bullets">
+                  ${p.responsibilities.map(item => `<li>${item}</li>`).join('')}
+                </ul>` : ''}
+              ${(p.images && p.images.length && !p.lorPackages) ? `
+                <h2>Gallery</h2>
+                <div class="gallery">
+                  ${p.images.map(src => `<img loading="lazy" src="${src}" alt="${p.title} screenshot">`).join('')}
+                </div>` : ''}
+            </div>
+          </section>
+
+          ${p.reflection ? `<section class="project-reflection" id="reflection"><h2>Reflection</h2></section>` : ''}
+        </article>
+      `;
+    }
+
+    (async function init() {
+      try {
+        const slugParam = getParam('slug');
+        const slug = decodeURIComponent((slugParam || '').trim());
+        const projects = await loadProjects();
+        let p = projects.find(x => x.slug === slug);
+        if (!p && slug) {
+          const norm = s => s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+          p = projects.find(x => norm(x.title) === norm(slug));
+        }
+        if (!p) {
+          const el = document.getElementById('content');
+          el.innerHTML = '<h1>Project not found</h1><p>Check the link or go back to the <a href="index.html">overview</a>.</p>';
+          return;
+        }
+
+        renderProject(p);
+
+        // Move any inline gallery to a full-width section below both columns
+        (function moveGalleryFullWidth(){
+          try {
+            if (p.slug === 'lor-cards') return;
+            const body = document.querySelector('.project-body');
+            const content = document.querySelector('.project-content');
+            if (!body || !content) return;
+            const gal = content.querySelector(':scope > .gallery');
+            if (!gal) return;
+            const prev = gal.previousElementSibling;
+            if (prev && prev.tagName && prev.tagName.toLowerCase() === 'h2') prev.remove();
+            const sec = document.createElement('section');
+            sec.className = 'project-gallery';
+            const h2 = document.createElement('h2'); h2.textContent = 'Gallery';
+            sec.appendChild(h2);
+            sec.appendChild(gal);
+            body.appendChild(sec);
+          } catch(e){ console.warn('Gallery move failed', e); }
+        })();
+
+        // Flexible reflection blocks (title/text/bullets/image/images)
+        function renderReflectionBlocks(project) {
+          try {
+            if (!project || !project.reflection) return;
+            const root = document.getElementById('reflection');
+            if (!root) return;
+            const ref = project.reflection;
+            const blocks = Array.isArray(ref) ? ref : (Array.isArray(ref.blocks) ? ref.blocks : null);
+            if (blocks) {
+              blocks.forEach(b => {
+                if (b.title) { const h = document.createElement('h3'); h.textContent = b.title; root.appendChild(h); }
+                if (b.text) {
+                  b.text.split('\n').forEach(par => {
+                    if (!par.trim()) return;
+                    const p = document.createElement('p'); p.textContent = par; root.appendChild(p);
+                  });
+                }
+                if (Array.isArray(b.bullets) && b.bullets.length) {
+                  const ul = document.createElement('ul'); ul.className = 'bullets';
+                  b.bullets.forEach(t => { const li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+                  root.appendChild(ul);
+                }
+                if (b.image) {
+                  const img = document.createElement('img');
+                  img.src = b.image; img.alt = b.title ? (b.title + ' image') : 'reflection image'; img.loading = 'lazy';
+                  const wrap = document.createElement('div'); wrap.className = 'gallery is-uniform'; wrap.appendChild(img);
+                  root.appendChild(wrap);
+                }
+                if (Array.isArray(b.images) && b.images.length) {
+                  const gal = document.createElement('div'); gal.className = 'gallery is-uniform';
+                  b.images.forEach(src => { const img = document.createElement('img'); img.src = src; img.loading='lazy'; img.alt = (b.title||'reflection') + ' image'; gal.appendChild(img); });
+                  root.appendChild(gal);
+                }
+              });
+            } else {
+              if (ref.text) ref.text.split('\n').forEach(par => { const pEl = document.createElement('p'); pEl.textContent = par; root.appendChild(pEl); });
+              if (Array.isArray(ref.images) && ref.images.length) {
+                const gal = document.createElement('div'); gal.className = 'gallery is-uniform';
+                ref.images.forEach(src => { const img = document.createElement('img'); img.src = src; img.loading='lazy'; img.alt = 'reflection image'; gal.appendChild(img); });
+                root.appendChild(gal);
+              }
+            }
+          } catch(e) { console.warn('Reflection render failed', e); }
+        }
+
+        // Lightbox singleton (works for any gallery)
+        (function initLightboxSingleton(){
+          if (window.__LIGHTBOX__) return;
+          const overlay = document.createElement('div');
+          overlay.id = 'lightbox';
+          overlay.className = 'lightbox';
+          overlay.setAttribute('aria-hidden','true');
+          overlay.innerHTML = `
+            <button class="nav prev" aria-label="Previous">‹</button>
+            <img class="lightbox-img" alt="Gallery image">
+            <button class="nav next" aria-label="Next">›</button>
+          `;
+          document.body.appendChild(overlay);
+
+          const state = { overlay, imgEl: overlay.querySelector('.lightbox-img'), index: 0, imgs: [] };
+          function openAt(imgs, i){
+            state.imgs = imgs; state.index = (i + imgs.length) % imgs.length;
+            state.imgEl.src = state.imgs[state.index].src;
+            state.overlay.classList.add('is-open');
+            state.overlay.setAttribute('aria-hidden','false');
+            document.body.style.overflow = 'hidden';
+          }
+          function closeBox(){
+            state.overlay.classList.remove('is-open');
+            state.overlay.setAttribute('aria-hidden','true');
+            document.body.style.overflow = '';
+          }
+          function prev(){ if (state.imgs.length) openAt(state.imgs, state.index - 1); }
+          function next(){ if (state.imgs.length) openAt(state.imgs, state.index + 1); }
+
+          overlay.addEventListener('click', (e) => {
+            if (e.target.classList.contains('prev')) { prev(); return; }
+            if (e.target.classList.contains('next')) { next(); return; }
+            if (e.target === overlay) { closeBox(); return; }
+          });
+          document.addEventListener('keydown', (e) => {
+            if (!overlay.classList.contains('is-open')) return;
+            if (e.key === 'Escape') closeBox();
+            if (e.key === 'ArrowLeft') prev();
+            if (e.key === 'ArrowRight') next();
+          });
+
+          window.__LIGHTBOX__ = { openAt };
+        })();
+
+        function setupLightboxFor(selector){
+          const containers = Array.from(document.querySelectorAll(selector));
+          if (!containers.length) return;
+          containers.forEach((container) => {
+            const imgs = Array.from(container.querySelectorAll('img'));
+            if (!imgs.length) return;
+            container.addEventListener('click', (e) => {
+              const el = e.target.closest('img');
+              if (!el) return;
+              const idx = imgs.indexOf(el);
+              if (idx >= 0 && window.__LIGHTBOX__) window.__LIGHTBOX__.openAt(imgs, idx);
+            });
+          });
+        }
+
+        // Render reflection + set up lightboxes
+        renderReflectionBlocks(p);
+        setupLightboxFor('.project-gallery .gallery');
+        setupLightboxFor('.project-reflection .gallery');
+
+        // LoR project: intro + packages, no Overview box
+        if (p.slug === 'lor-cards') {
+          const meta = document.querySelector('.project-meta');
+          if (meta) meta.remove();
+          const body = document.querySelector('.project-body');
+          if (body) body.classList.add('is-lor');
+          const content = document.querySelector('.project-content');
+          if (content) {
+            content.innerHTML = p.longDescription
+              ? p.longDescription.split('\n').map(par => `<p>${par}</p>`).join('')
+              : '<p>This page collects custom LoR card packages.</p>';
+          }
+          const wrap = document.createElement('section');
+          wrap.className = 'lor-section';
+          wrap.innerHTML = `<div class="pkg-grid" id="pkg-grid"></div>`;
+          body.appendChild(wrap);
+          const grid = wrap.querySelector('#pkg-grid');
+          (p.lorPackages || []).forEach(pkg => {
+            const art = (pkg.coverImage || 'assets/placeholder.svg');
+            const card = document.createElement('article');
+            card.className = 'card pkg-card';
+            card.innerHTML = `
+              <a class="card-link" href="lor-package.html?project=${encodeURIComponent(p.slug)}&pkg=${encodeURIComponent(pkg.slug)}" aria-label="Open ${pkg.title}">
+                <div class="thumb">
+                  <img loading="lazy" src="${art}" alt="${pkg.title} cover">
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title">${pkg.title}</h3>
+                  <p class="muted">${pkg.subtitle || ''}</p>
+                  <p class="desc">${pkg.overview || ''}</p>
+                </div>
+              </a>`;
+            grid.appendChild(card);
+          });
+        }
+
+        // TTRPG page: force uniform-height galleries for consistency
+        if (p.slug === 'emberwake' || p.uniformGallery) {
+          const root = document.getElementById('project');
+          if (root) {
+            root.querySelectorAll('.project-content .gallery, .project-gallery .gallery').forEach(g => {
+              g.classList.add('is-uniform');
+            });
+          }
+        }
+
+        // Copy email button
+        attachCopyEmail();
+
+      } catch (err) {
+        console.error(err);
+        document.getElementById('content').innerHTML = '<p>Could not load project. Make sure you are serving the site over HTTP.</p>';
+      }
+    })();
+
+    function attachCopyEmail() {
+      const buttons = document.querySelectorAll('.js-copy-email');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const email = btn.dataset.email || 'maureder.christoph@gmail.com';
+          try { await navigator.clipboard.writeText(email); }
+          catch (err) { const ta = document.createElement('textarea'); ta.value = email; document.body.appendChild(ta);
+            ta.select(); document.execCommand('copy'); ta.remove(); }
+          showCopyToast(btn, 'Copied! 👍');
+        });
+      });
+    }
+    function showCopyToast(anchor, text) {
+      const toast = document.createElement('div');
+      toast.className = 'copy-pop';
+      toast.textContent = text;
+      document.body.appendChild(toast);
+      const r = anchor.getBoundingClientRect();
+      toast.style.left = (r.left + r.width/2) + 'px';
+      toast.style.top  = (r.top - 8) + 'px';
+      requestAnimationFrame(() => toast.classList.add('is-visible'));
+      setTimeout(() => { toast.classList.remove('is-visible'); setTimeout(() => toast.remove(), 200); }, 1200);
+    }
+  </script>
+</body>
+</html>

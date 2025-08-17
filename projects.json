@@ -1,0 +1,922 @@
+[
+  {
+    "slug": "statforged",
+    "title": "Statforged",
+    "subtitle": "Evolving-Tower defense",
+    "year": 2024,
+    "duration": "3 weeks",
+    "teamSize": 1,
+    "role": "Solo Dev",
+    "tools": [
+      "Unity",
+      "C#",
+      "Aseprite",
+      "Miro"
+    ],
+    "coverImage": "assets/Statforged/OV.png",
+    "shortDescription": "Place a single tower that evolves as you level it, branching into different builds based on RPG stats.",
+    "longDescription": "A 15-minute tower defense game where you place a tower every minute and level it up with RPG stats to unlock unique effects for the tower.",
+    "responsibilities": [
+      "Designed tower upgrades",
+      "Implemented Code",
+      "Game Balance"
+    ],
+    "tags": [
+      "Game Design",
+      "Programming",
+      "Unity"
+    ],
+    "images": [
+      "assets/Statforged/01.png",
+      "assets/Statforged/02.png",
+      "assets/Statforged/04.png",
+      "assets/Statforged/03.png",
+      "assets/Statforged/05.png"
+    ],
+    "reflection": {
+      "blocks": [
+        {
+          "title": "Tower"
+        },
+        {
+          "text": "The game only has one type of tower the player can place. Periodically, the player can level up the tower’s stats (Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma). Each of these stats upgrades a specific aspect of the tower. For example, Dexterity increases attack speed, while Strength increases attack damage."
+        },
+        {
+          "text": "When a tower reaches level 5, it gets its first upgrade choice. For Strength, the player can choose between a small AOE attack or more damage to a target above 90% HP. At level 10, this happens again with even stronger upgrades. For example, Strength can choose between: “if an enemy is killed, upgrade your highest stat for 3 seconds” or “execute enemies below 15% health.”"
+        },
+        {
+          "text": "The physical stats focus on the normal attack, with Constitution affecting the tower’s health. The mental stats are tied to casting. Wisdom increases mana regeneration, and Intelligence increases spell damage. Charisma is the interesting one, it increases 1 or 2 random stats by 1."
+        },
+        {
+          "images": [
+            "assets/Statforged/04.png",
+            "assets/Statforged/03.png"
+          ]
+        },
+        {
+          "title": "Upgread Problems"
+        },
+        {
+          "text": "The biggest problem is the timing of the tower. I wanted to create a tower defense game with a fixed time and no downtime. At the time I was playing a lot of Vampire Survivors and was inspired by its fixed game length. I always disliked the prep phase in tower defense games — I wanted action all the time. That is why I created a wave system that never stops: as soon as one ends, the next begins."
+        },
+        {
+          "text": "Currently, the player can place a tower every minute. This means that in the first minute the player can place one tower and then has nothing else to do but wait to level it up. On the other hand, starting around minute 12, the player constantly needs to go from tower to tower upgrading them, with no downtime to think."
+        },
+        {
+          "text": "I am not entirely sure how to solve the first problem without just adding a fast-forward button. But for the second, I know how I would fix it: limit the amount of towers to 5-7. In the later part of the game you currently just place towers for the sake of placing them, since you cannot upgrade them significantly enough to affect enemies due to the leveling system. By limiting the number of towers, the player would be forced to place them more strategically, and the upgrade rate would feel more manageable."
+        },
+        {
+          "images": [
+            "assets/Statforged/07.png"
+          ]
+        },
+        {
+          "title": "Casting Problems"
+        },
+        {
+          "text": "The casting system is a bit weird. By default, towers have 0 mana regeneration and they only start regenerating once the player invests in Wisdom. This means if the player levels Intelligence first, it is completely useless. Originally, I wanted to create a more intricate casting system, but due to time constraints I had to simplify it to the current version. I really dislike the disconnect between the casting and the attacking parts."
+        },
+        {
+          "images": [
+            "assets/Statforged/08.png"
+          ]
+        },
+        {
+          "title": "Strong Towers"
+        },
+        {
+          "text": "In the final version of the game, every tower can be upgraded 25 times. This means you gain 2 big boons (at level 10) and 1 small one (at level 5). I dislike this because it does not really matter whether you started with Dexterity or Strength, in the end, you will probably end up with a tower that has 10 Strength and 10 Dexterity anyway."
+        },
+        {
+          "text": "I would limit this to 15 upgrades so the player has to decide which big upgrade they want. I think this would make the game much more interesting from a tactical point of view. It would reduce the amount of “action” the player has once a tower stops being upgradeable, but maybe that is a good thing and it could naturally solve the problem of having too many towers."
+        }
+      ]
+    },
+    "links": {}
+  },
+  {
+    "slug": "Catalyst",
+    "title": "Catalyst (TTRPG)",
+    "subtitle": "Tactical combat focused on teamwork and player freedom.",
+    "year": 2025,
+    "duration": "Ongoing",
+    "teamSize": 2,
+    "role": "Co-Design",
+    "tools": [
+      "Miro",
+      "Obsidian",
+      "Notion"
+    ],
+    "coverImage": "assets/Catalyst.png",
+    "shortDescription": "Tactical combat focused on teamwork and player freedom",
+    "longDescription": "Catalyst is very much inspired by Pathfinder 2e and Dungeons & Dragons 5e. It tries to create a compact system that can be expanded to fit many different settings. One of the core concepts of the game are conditionals. Most actions have one or more conditionals that empower that action. This is meant to create more tactical combat that rewards communication and teamwork.",
+    "tags": [
+      "TTRPG",
+      "Non-Video Game",
+      "Game Design"
+    ],
+    "images": [
+      "assets/Catalyst/01.png"
+    ],
+    "reflection": {
+      "blocks": [
+        {
+          "title": "Conditionals"
+        },
+        {
+          "text": "Conditionals are the core of this TTRPG. They shape all three pillars of play — social, combat, and exploration. The main goal is to encourage teamwork in a fun and engaging way. "
+        },
+        {
+          "text": "One big thing that bothers me in PF2 is that teamwork is usually tied only to numbers. Teamwork often means the witch casts Fear on the ogre, giving it a -1 to everything. The bard casts Courageous Anthem to buff the fighter’s and rogue’s attack bonus. The rogue strides to give the fighter flanking and attacks. And then the fighter attacks. Fun teamwork… I guess."
+        },
+        {
+          "text": "But now imagine this:"
+        },
+        {
+          "text": "The bard activates Helpful Hand (auto fulfills one spell conditional of his choice) and a Flames hand apears, ready fulfilling the fire condition of the upcomming witch’s spell. He then uses a spell to push the rogue fifteen feet away from the ogre."
+        },
+        {
+          "text": "The rogue reenters the ogre’s reach thanks to the bard, triggering his conditional: Sneak Attack. Because the ogre is within the fighter’s reach, the rogue can uses his conditional on his strikes to aid the fighter’s next attack for free."
+        },
+        {
+          "text": "The fighter, in his special stance that lets him topple enemies if aided by a flanking ally, strikes the ogre. With the rogue’s aid, his conditional triggers and the ogre is pushed back, stumbles over the aiding rogue, and falls prone."
+        },
+        {
+          "text": "Finally, the witch casts her spell. A hand of earth rises and squeezes the ogre. Because the enemy is prone, the first conditional triggers: in addition to the damage, the ogre is grabbed until the end of her next turn. Then the earth hand bursts into flames thanks to the bard’s helping hand. Now the ogre is covered in molten rock and takes persistent fire damage."
+        },
+        {
+          "text": "I might be biased here, but one sounds more exciting, cinematic, and satisfying than the other."
+        },
+        {
+          "images": [
+            "assets/Catalyst/04.png",
+            "assets/Catalyst/05.png"
+          ]
+        },
+        {
+          "title": "Mosters"
+        },
+        {
+          "text": "Another thing that bothers me about PF2 and D&D is the lack of variety in combat. The monsters attack, the allies attack, and for the most part you could swap out one monster for another of the same strength and the strategy would not really change. Yes, the monster might have one or two unique abilities (at least in PF2 (let’s not even talk about D&D…)), but most of the time it is just “strike plus.” Nothing the players can really play around."
+        },
+        {
+          "text": "Catalyst tries to solve this. Most normal enemies have three stages of weaknesses. These weaknesses can be triggered by the heroes to gain advantages. For example, if an enemy phases 10 feet in a direction after every strike, there could be a weakness that if they are successfully struck while phasing, they lose one action. Or if a body part takes 20 cold damage in one round and is then hit with bludgeoning damage, the limb falls off and the enemy loses 25% of its max health or has its speed halved."
+        },
+        {
+          "text": "These weaknesses can be recalled in combat by the players, and depending on the result they gain access to one, two, or all three weaknesses. For boss monsters this works differently. They have more weaknesses that the heroes ideally need to figure out before the fight and plan accordingly. Need to deal fire damage? Find a potion to coat the fighter’s blade. Need to make loud noises? Hire a bard and give him a megaphone. Need to disable one of its core abilities? Find a way to do it."
+        },
+        {
+          "text": "This, in combination with conditionals, should ensure that no combat feels the same. Players should feel excited for combat, not just another round of “attack -> miss, attack again -> hit, 5 damage, raise shield... next in like...”"
+        },
+        {
+          "images": []
+        },
+        {
+          "title": "Crits"
+        },
+        {
+          "text": "Everyone loves crits! But what if I told you that you can crit twice on one attack or even every third time? Then you might be interested in Catalyst’s agility martials."
+        },
+        {
+          "text": "In Catalyst, you add your Strength to damage and your Coordination to hit. On top of that, there are weapons with the Lethality X trait. This trait says that if you hit an enemy, you reduce the range you need to crit by X. The normal crit range is 10. So if the AC is 25 and you roll a 35, you crit. But if the AC is 25 and you roll a 35 with a Lethality 5 weapon, you double crit dealing quadruple your initial damage."
+        },
+        {
+          "text": "The tradeoff is that these Lethality weapons have a lower base damage die, usually 1d4s or 1d6s compared to the d8 and d10 weapons Strength users rely on. d12s are very rare because of the inherent inconsistency in the damage they deal. Not to say d10s cannot have crit-fishing traits, but you have to start somewhere."
+        },
+        {
+          "images": [
+            "assets/Catalyst/06.png",
+            "assets/Catalyst/07.png"
+          ]
+        }
+      ]
+    },
+    "links": {}
+  },
+  {
+    "slug": "rune-run",
+    "title": "Rune Run",
+    "subtitle": "Side-view party combat with a rune-casting grid",
+    "year": 2024,
+    "duration": "8 weeks",
+    "teamSize": 14,
+    "role": "Pitch & Programming",
+    "tools": [
+      "Unity",
+      "C#",
+      "Miro"
+    ],
+    "coverImage": "assets/RR1.png",
+    "shortDescription": "Side-view, party-based combat inspired by Darkest Dungeon. Cast spells via a node-based rune grid.",
+    "longDescription": "Rune Run combines classic side-view turn combat with a modular spell-crafting system. You place runes on a small grid to shape damage, utility, and status effects - encouraging experimentation and expressive builds.",
+    "responsibilities": [
+      "Co-pitched the core concept",
+      "Implemented the games code",
+      "Participated in all design meetings, providing feedback and ideas"
+    ],
+    "tags": [
+      "Programming",
+      "Unity",
+      "Pitch",
+      "Game Design"
+    ],
+    "images": [
+      "assets/RR2.png",
+      "assets/RR3.png",
+      "assets/RR4.png",
+      "assets/RR5.png",
+      "assets/RR6.png"
+    ],
+    "reflection": {
+      "blocks": [
+        {
+          "title": "The pitch"
+        },
+        {
+          "text": "Rune Run went through several changes throughout development. We were three people in the original pitch team. Originally, we wanted to create a roguelike with gameplay similar to Into the Breach, but with a node-based casting system."
+        },
+        {
+          "text": "This node-based system worked by showing the player a 2×3 grid where they could connect three nodes to create a spell effect. The player wouldn’t know what the effects behind the nodes were at first - they would have to explore the grid to learn them. As the game progressed, the grid would grow and the number of nodes the player could connect would increase."
+        },
+        {
+          "text": "The nodes we planned included shape nodes, damage type, damage, and range. Some nodes would give you a bonus if you accepted a malus to another stat. Throughout the game, the player could have encounters to manipulate the grid in various ways. Randomizing the starting nodes would allow for a lot of variation in starting setups."
+        },
+        {
+          "images": [
+            "assets/RR8.png",
+            "assets/RR9.png",
+            "assets/RR10.png"
+          ]
+        },
+        {
+          "title": "What changed"
+        },
+        {
+          "text": "After we went into development, we created a prototype. However, after receiving less-than-great feedback during playtests, we decided to start over and changed the combat to a 2D Darkest Dungeon-inspired combat with a 'rune placement on a grid' system. We increased the number of characters to five, although the player can only control one. Each character had an associated element that influenced the area of the board they were standing on."
+        },
+        {
+          "text": "When a rune is placed on the board, the top two elements that have been, are used to determine the secondary effect of the spell. Each element had a unique effect when combined with another, so for example, if Fire and Nature were combined, the target would receive DoT damage. This system dose not distinguish between friend and foe, meaning you can give enemies damage reduction or give allies fire vulnerability."
+        },
+        {
+          "images": [
+            "assets/RR11.png",
+            "assets/RR12.png",
+            "assets/RR13.png"
+          ]
+        },
+        {
+          "title": "My rune system"
+        },
+        {
+          "text": "Before we settled on the rune placement option, every designer had a weekend to pitch a new rune system. I created a system where you have base runes that can be modified with augmentation runes. The base runes provide the core of the spell, like +2 damage and +2 area, or they can be fixed so 'this is a fire spell that deals X damage.'"
+        },
+        {
+          "text": "The last placed node from the base rune becomes the starting node for the augmentation rune. These augmentations change the base spell in some way - for example, boosting fire damage, or reducing the range by 50% but increasing the damage by 100%. I intentionally designed this system to be open-ended so that the seven of us could combine ideas and brainstorm what would be a good fit for the game. It was meant to work as a baseline for an interesting spell system."
+        },
+        {
+          "text": "In my mind, the board itself should also influence these runes. For example, it could have power nodes that grant a bonus or a malus to the spell, so players couldn’t just default to using the same spells over and over. I really liked the flexibility of this system, though there were a few problems - such as the learning curve (you can’t really introduce them one by one if the player can draw anything) and the balancing challenge of making all base runes work well with all augmentation runes."
+        },
+        {
+          "image": "assets/RR15.png"
+        },
+        {
+          "title": "Personal thoughts"
+        },
+        {
+          "text": "I think we had too many people with too many different visions for the game. Personally, I don’t like the final direction we went in. The passive bonuses from the elements are not really noticeable, and there isn’t the 'create your own spell' feeling we were originally excited about. The switch to 2D was good, though, as it simplified combat both in coding and gameplay."
+        },
+        {
+          "text": "I’m still not sure if the original system could have worked if we had tested it in a different setting. Instead of starting with a 2×3 grid, we began with a 4×5 grid, which didn’t give the player enough time to figure out what the nodes were. On top of that, we playtested at school where players had limited time and were rushed from game to game. I think the game would have benefited from slower, more focused playtest."
+        },
+        {
+          "text": "Another big problem was workload distribution. We had one manager, one coder (me), six artists, and six designers. Every designer wanted to create their own system, so we ended up with many small systems that didn’t really work well together."
+        },
+        {
+          "text": "But in the end I think it was a good experience working in a big group like that. I learned a lot about how to communicate, avoid misunderstandings, and get everyone on the same page (or at least try)."
+        },
+        {
+          "image": "assets/RR14.png"
+        }
+      ]
+    },
+    "links": {}
+  },
+  {
+    "slug": "lor-cards",
+    "title": "Legends of Runeterra - Card Packages",
+    "subtitle": "Custom design champion packages",
+    "year": 2025,
+    "duration": "Varied",
+    "teamSize": 1,
+    "role": "Card Design",
+    "tools": [
+      ""
+    ],
+    "coverImage": "assets/LOR/OV.png",
+    "shortDescription": "My custom LoR-style card design.",
+    "longDescription": "These are cards designed for the card game Legends of Runeterra from Riot Games. A champion was chosen by a friends and myselfe, and we each had around 3–4 hours to create a champion package. The only requirements were a level one and tow champion card and a champion spell while the rest was up to us. My approach was to go with the more extreme ideas to see if it could work. These cards would definitely need a lot of balance changes, and some might even require complete rewrites, but my goal was more about exploring an idea and seeing what came out of it. When I created these cards, I didn’t anticipate publishing them, so credits for the artworks are missing. (Please contact me if I used your artwork and you would like me to remove it.)",
+    "tags": [
+      "Game Design",
+      "Non-Video Game"
+    ],
+    "images": [],
+    "lorPackages": [
+            {
+        "slug": "xayah",
+        "title": "Xayah & Rakan",
+        "subtitle": "Combo",
+        "year": 2025,
+        "overview": "Trigger flow to create values and empower Xayah/Rakan",
+        "notes": "This is the most recent package I designed. I am not sure if I like how it turned out, but it is definitely interesting. I think Xayah and Rakan don’t really fit into Ionia, or at least they don’t want to be played with regular Ionian cards. They feel kind of forced into Noxus to gain Overwhelm. The support package is sadly only there to create more flow cards, since in the current base game it is very hard to play a deck fully based on Flow. I really like some of the designs, but I think Xayah and Rakan need a bit more tweaking to be in the right spot.",
+        "tags": [],
+        "coverImage": "assets/LOR/Xayah/OV.png",
+        "cards": [
+          {
+            "image": "assets/LOR/xayah/01.png"
+          },
+          {
+            "image": "assets/LOR/xayah/02.png"
+          },
+          {
+            "image": "assets/LOR/xayah/03.png"
+          },
+          {
+            "image": "assets/LOR/xayah/04.png"
+          },
+          {
+            "image": "assets/LOR/xayah/05.png"
+          },
+          {
+            "image": "assets/LOR/xayah/06.png"
+          },
+          {
+            "image": "assets/LOR/xayah/07.png"
+          },
+          {
+            "image": "assets/LOR/xayah/08.png"
+          },
+          {
+            "image": "assets/LOR/xayah/09.png"
+          },
+          {
+            "image": "assets/LOR/xayah/10.png"
+          },
+          {
+            "image": "assets/LOR/xayah/11.png"
+          },
+          {
+            "image": "assets/LOR/xayah/12.png"
+          },
+          {
+            "image": "assets/LOR/xayah/13.png"
+          },
+          {
+            "image": "assets/LOR/xayah/14.png"
+          },
+          {
+            "image": "assets/LOR/xayah/15.png"
+          },
+          {
+            "image": "assets/LOR/xayah/16.png"
+          },
+          {
+            "image": "assets/LOR/xayah/17.png"
+          },
+          {
+            "image": "assets/LOR/xayah/18.png"
+          },
+          {
+            "image": "assets/LOR/xayah/19.png"
+          },
+          {
+            "image": "assets/LOR/xayah/20.png"
+          },
+          {
+            "image": "assets/LOR/xayah/21.png"
+          },
+          {
+            "image": "assets/LOR/xayah/22.png"
+          }
+        ],
+        "reflectionTitle": "Designer Thoughts",
+        "reflection": {
+          "blocks": [
+           {
+            "title": "WIP"
+           }
+          ]
+        }
+      },
+      {
+        "slug": "alpha",
+        "title": "Wukong",
+        "subtitle": "Midrange, positioning",
+        "year": 2025,
+        "overview": "New keyword limits the number of units in an attack to three, but grants them stat bonuses.",
+        "notes": "The whole package revolves around the Formation keyword, which limits the player’s attack to three units otherwise, their keywords and effects are disabled. Most cards either want to be blocked and have a 'taunt' mechanic built in, while others debuff or damage all blocking enemies. Wukong is the most important unit when he levels up, he deals 2 damage to all blocking enemies and creates a clone of himselfe. The concept doesn’t fit very well into Ionia and would be more to home in Demacia.",
+        "tags": [],
+        "coverImage": "assets/LOR/Wukong/OV.png",
+        "cards": [
+          {
+            "image": "assets/LOR/Wukong/02.png"
+          },
+          {
+            "image": "assets/LOR/Wukong/01.png"
+          },
+          {
+            "image": "assets/LOR/Wukong/04.png"
+          },
+          {
+            "image": "assets/LOR/Wukong/03.png"
+          },
+          {
+            "image": "assets/LOR/Wukong/05.png"
+          },
+          {
+            "image": "assets/LOR/Wukong/06.png"
+          },
+          {
+            "image": "assets/LOR/Wukong/07.png"
+          },
+          {
+            "image": "assets/LOR/Wukong/08.png"
+          },
+          {
+            "image": "assets/LOR/Wukong/09.png"
+          },
+          {
+            "image": "assets/LOR/Wukong/10.png"
+          },
+          {
+            "image": "assets/LOR/Wukong/11.png"
+          },
+          {
+            "image": "assets/LOR/Wukong/12.png"
+          },
+          {
+            "image": "assets/LOR/Wukong/13.png"
+          },
+          {
+            "image": "assets/LOR/Wukong/14.png"
+          }
+        ],
+        "reflectionTitle": "Designer Thoughts",
+        "reflection": {
+          "blocks": [
+            {
+              "title": "Low Cost Cards"
+            },
+            {
+              "text": "A problem, or at least something I don’t particularly like, is that due to Formation, all the low-cost cards only have 0 or 1 power. This might be fine in terms of balancing, but it would need playtesting to see if this potential frustration is counteracted by the strength of Formation. The 6-cost Stick Sage isa good card to block with though 6 is very late and it has an in built drawback. All the other cards aren’t great defensive options from the start. This would be fine if it were a combo deck, but it currently plays more like a midrange deck."
+            },
+            {
+              "images": [
+                "assets/LOR/Wukong/06.png",
+                "assets/LOR/Wukong/07.png",
+                "assets/LOR/Wukong/08.png",
+                "assets/LOR/Wukong/09.png",
+                "assets/LOR/Wukong/14.png"
+              ]
+            },
+            {
+              "title": "Wukong"
+            },
+            {
+              "text": "For a long time, I had Wukong with the effect of dealing 1 damage to all adjacent enemies of the striking target. This was also present in most other followers. But when I designed a follower with a very strong effect, I wanted to limit the number of allies that could attack with it. I really liked this effect, so I created the Formation keyword to enforce it on all Formation units."
+            },
+            {
+              "text": "This change came a bit too late in development and doesn’t really work well with the original vision, where the focus was heavily on positioning. Now, I think I should have just made a keyword that says all 'Strike' effects are also applied to units adjacent to the striking target. This would return more to the original idea and function more like a combo deck, which would also fit better in Ionia. The current Formation idea could then be used for a Demacia champion like Xin Zhao."
+            },
+            {
+              "images": [
+                "assets/LOR/Wukong/01.png",
+                "assets/LOR/Wukong/04.png",
+                "assets/LOR/Wukong/02.png"
+              ]
+            },
+            {
+              "title": "Teaching Of The Trickster"
+            },
+            {
+              "text": "This is a remnant of the original position-focused package. I think now it doesn’t fit as well into the deck as before and generally is a bit weird in this style of deck."
+            },
+            {
+              "image": "assets/LOR/Wukong/03.png"
+            },
+            {
+              "title": "Troblesome Monkey"
+            },
+            {
+              "text": "This card is very OP. It often lets your strongest unit attack without having to worry about being blocked by a strong enemy. That enemy then gets debuffed or damaged by Wukong or the Pattern Spirit and the card just recalls itself."
+            },
+            {
+              "text": "The main reason I left it in is because I REALLY like the theme of an annoying monkey that pokes someone way too strong and then just runs away over and over."
+            },
+            {
+              "images": [
+                "assets/LOR/Wukong/07.png",
+                "assets/LOR/Wukong/12.png"
+              ]
+            },
+            {
+              "title": "Taunt Cards"
+            },
+            {
+              "text": "These don’t really pose a threat and usually should just be ignored. However, the effects they grant should give the enemy an incentive to block them anyway. This is further amplified by the Formation keyword that grants stacking buffs."
+            },
+            {
+              "text": "I’m not sure if they’re in a good spot or would work at all, though I think this style of card is very interesting and has potential if done right."
+            },
+            {
+              "images": [
+                "assets/LOR/Wukong/09.png",
+                "assets/LOR/Wukong/14.png"
+              ]
+            },
+            {
+              "title": "What To Change"
+            },
+            {
+              "text": "I think without drastic changes, the deck could use more 'all blocking enemies' effects. Currently, only Wukong and Pattern Spirit provide support for the taunt cards. Maybe adding a card or two that grants every attacker Vulnerability would help."
+            },
+            {
+              "text": "In the long run, I really think Formation should be changed so all strike effects also affect units adjacent to the target. This would streamline the whole package, and you could then add a lot more cards that fully commit to this style like heal on strike, or 'if all struck targets are damaged, recall them' (this one might be a bit strong xD). Still, I think this is the general direction that would be the healthiest for the deck."
+            },
+            {
+              "images": [
+                "assets/LOR/Wukong/01.png",
+                "assets/LOR/Wukong/04.png",
+                "assets/LOR/Wukong/12.png"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "slug": "beta",
+        "title": "Briar",
+        "subtitle": "Combo, scaling",
+        "year": 2025,
+        "overview": "Playing around with equipping and unequipping units to give them stat buffs.",
+        "notes": "Here I went all in on the vision of suppressing one’s power. The core mechanic, Release, grants units with the keyword power for each time they have been unequipped. Paired with Noxus, where Overwhelm grants are easy to come by, the attack stacking and the health regeneration from equipment swapping should create an interesting playstyle. I think I would buff the health grants from the equipment and also increase the attack decreases to further lean into this duality. Though, then it would feel less like Noxus and might be more at home in Targon. The system is maybe a bit tricky to place. As it is now, the units don’t have enough defense to fully benefit from the equipment healing or the stacking attack mechanic. I do think there’s a very interesting core here though it would need some changed.",
+        "tags": [],
+        "coverImage": "assets/LOR/Briar/OV.png",
+        "cards": [
+          {
+            "image": "assets/LOR/Briar/02.png"
+          },
+          {
+            "image": "assets/LOR/Briar/01.png"
+          },
+          {
+            "image": "assets/LOR/Briar/03.png"
+          },
+          {
+            "image": "assets/LOR/Briar/04.png"
+          },
+          {
+            "image": "assets/LOR/Briar/05.png"
+          },
+          {
+            "image": "assets/LOR/Briar/06.png"
+          },
+          {
+            "image": "assets/LOR/Briar/07.png"
+          },
+          {
+            "image": "assets/LOR/Briar/08.png"
+          },
+          {
+            "image": "assets/LOR/Briar/09.png"
+          },
+          {
+            "image": "assets/LOR/Briar/10.png"
+          },
+          {
+            "image": "assets/LOR/Briar/11.png"
+          },
+          {
+            "image": "assets/LOR/Briar/12.png"
+          },
+          {
+            "image": "assets/LOR/Briar/13.png"
+          },
+          {
+            "image": "assets/LOR/Briar/14.png"
+          },
+          {
+            "image": "assets/LOR/Briar/15.png"
+          },
+          {
+            "image": "assets/LOR/Briar/16.png"
+          },
+          {
+            "image": "assets/LOR/Briar/17.png"
+          },
+          {
+            "image": "assets/LOR/Briar/18.png"
+          },
+          {
+            "image": "assets/LOR/Briar/19.png"
+          },
+          {
+            "image": "assets/LOR/Briar/20.png"
+          },
+          {
+            "image": "assets/LOR/Briar/21.png"
+          }
+        ],
+        "reflectionTitle": "Designer Thoughts",
+        "reflection": {
+          "blocks": [
+            {
+              "title": "Release"
+            },
+            {
+              "text": "I really wanted to capture Briar’s story — where she has an untamable bloodlust until she puts her pillory on. This led me to the idea that when she or any of the Release characters are released, they are more powerful on the attack and weaker on the defense. I still believe this is a good direction, but I think one would need to find a better way of rewarding that."
+            },
+            {
+              "text": "The stacking mechanic doesn’t work well in Noxus, where it’s all about aggression and the life expectancy of units is very low. One change that could be interesting is making Release a keyword on equipment, that when you unequip it, the user gains its positive power stat for one round, similar to the current Hemobound Belt. There could be a problem if an equipment gives -3 power and you unequip it, the difference becomes +6, which might be too strong. Another direction would be to let the units keep the keyword but have them gain a flat +2 power and Overwhelm instead."
+            },
+            {
+              "images": [
+                "assets/LOR/Briar/02.png",
+                "assets/LOR/Briar/19.png"
+              ]
+            },
+            {
+              "title": "Hematomania"
+            },
+            {
+              "text": "Another stacking mechanic. This one fits better in Noxus in terms of effect, but I’m unsure if it’s actually that good/powerful. It’s a deal damage with conditional Overwhelm effect that helps prevent weak jump blockers from stopping big units. At 4 mana, though, it’s still a big cost that might be too high for the tempo you usually play at in Noxus. I still really like the concept of this spell, though the exact numbers would definitely need tweaking."
+            },
+            {
+              "image": "assets/LOR/Briar/04.png"
+            },
+            {
+              "title": "Elder Hemomancer"
+            },
+            {
+              "text": "In theory, I’m a big fan of randomness. The problem here is that if you manage to get the original Blood Shard, you basically win instantly. To prevent this, the Researcher might need to have lower power, since +3 is reasonable to get in Noxus. It’s still not guaranteed, which is my next problem. If you want it and boost his attack, you have a 1-in-4 chance of getting it (assuming this is the whole package of Release units). In my opinion, that feels both too low and too high at the same time: on one hand, you have a 1/4 chance of winning the game outright; on the other hand, you’ve invested a decent amount into a weak unit just to have a 1/4 chance to get it."
+            },
+            {
+              "text": "Because of this, most people will probably not bother buffing him except when it happens naturally and then the 1/4 chance again feels extremely high. Maybe it’s best to create the Blood Shard on summon, though I do like the delayed effect. Another problem is that these equipments are balanced around Release units, so if your units don’t have Release, they are much weaker. This would probably require serious changes to how it works or just cutting it from the package entirely. (If I changed Release to the vision I proposed above, where you gain the power that has been 'sealed', this card would provide better value and could stay in the package, though it would still need adjustments.)"
+            },
+            {
+              "images": [
+                "assets/LOR/Briar/11.png"
+              ]
+            },
+            {
+              "title": "Demon of Blood"
+            },
+            {
+              "text": "With this card I really wanted to lean into a late-game match finisher. How it turned out is a bit too convoluted with too much text that does not fit well into the game as a whole. I think this card needs to be simplified a lot. One thing that would make sense is to remove the Release keyword since you probably will not trigger it anyway, especially with the current effect, and instead make a similar effect on a non-Release unit."
+            },
+            {
+              "text": "This ties into another problem I have with the current iteration of Release. The later in the game you are, the worse it becomes to play. This is fine for lower-cost cards, but for 7 or 9 mana cards, the Release keyword is practically useless."
+            },
+            {
+              "images": [
+                "assets/LOR/Briar/20.png",
+                "assets/LOR/Briar/21.png",
+                "assets/LOR/Briar/02.png"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "slug": "gamma",
+        "title": "Quiana",
+        "subtitle": "Combo, RNG Manipulation",
+        "year": 2024,
+        "overview": "Generates cards based on the last cards played with Qiyana as the prime value engine.",
+        "notes": "This is one of my favorite card packages due to the inherent randomness. Originally, the elemental cards (Terrain, River, Bush) forced the player to immediately play the generated card. This created some problems with the Supreme Display of Talent card and generally didn’t work well when played several times in a round. Furthermore, when you generated a spell, you often needed a target, which in turn meant you couldn’t play it immediately. To solve these issues, I simply changed it so the generated cards go into your hand. This fixes the problems while also adding more flexibility for the player.",
+        "tags": [],
+        "coverImage": "assets/LOR/quiana/OV.png",
+        "cards": [
+          {
+            "image": "assets/LOR/quiana/01.png"
+          },
+          {
+            "image": "assets/LOR/quiana/02.png"
+          },
+          {
+            "image": "assets/LOR/quiana/03.png"
+          },
+          {
+            "image": "assets/LOR/quiana/04.png"
+          },
+          {
+            "image": "assets/LOR/quiana/05.png"
+          },
+          {
+            "image": "assets/LOR/quiana/06.png"
+          },
+          {
+            "image": "assets/LOR/quiana/07.png"
+          },
+          {
+            "image": "assets/LOR/quiana/08.png"
+          },
+          {
+            "image": "assets/LOR/quiana/09.png"
+          },
+          {
+            "image": "assets/LOR/quiana/10.png"
+          },
+          {
+            "image": "assets/LOR/quiana/11.png"
+          }
+        ],
+        "reflectionTitle": "Designer Thoughts",
+        "reflection": {
+          "blocks": [
+            {
+              "title": "Royal Privilege"
+            },
+            {
+              "text": "The biggest problem I have with this package is the unintuitiveness of Royal Privilege. I want to force the player to switch between all the elements, so if they play a unit, I do not want them to generate another unit but rather a spell. The problem is that if you play a spell, you generate a terrain."
+            },
+            {
+              "text": "Maybe this is arbitrary, but in my mind spells are tied to River (that is why the River card creates a spell). And even if someone does not agree with the assignment of River => spell, Terrain => landmark, and Bush => unit, the problem of the mismatch in Royal Privilege still remains. I am not sure if there is a better phrasing that avoids this problem, but sadly I have not found better wording for the cards."
+            },
+            {
+              "images": [
+                "assets/LOR/Quiana/02.png",
+                "assets/LOR/Quiana/03.png",
+                "assets/LOR/Quiana/04.png",
+                "assets/LOR/Quiana/05.png"
+              ]
+            },
+            {
+              "title": "Eternal Deer"
+            },
+            {
+              "text": "This is a weird one. I like the general mechanic of getting bonuses when a specific element is played, but I think there need to be some changes to the type of keywords. Quick Attack plus Overwhelm is a rather powerful combo on a follower. Elusive, on the other hand, becomes a bit useless after you gain the first two copies. I wanted this effect originally on a late-game unit, but I did not like that you would play it at 6–7 mana and then still need to stack it. Now that I have removed stats and made it cost 3 mana, it feels very strong for a 3-cost card. Maybe one way to handle it is to have it enhance the type of card you play instead. For example, if you play a unit, grant that unit +1|+1; if you play a landmark, count it down by one; and if you play a spell, reduce its cost by 1. I do not really love that direction, though. Maybe Overwhelm is fine if you remove Quick Attack, and then you could give it Fearsome instead — or maybe Spirit? I am still really unsure with this one."
+            },
+            {
+              "image": "assets/LOR/Quiana/10.png"
+            }
+          ]
+        }
+      }
+    ],
+    "links": {}
+  },
+  {
+    "slug": "grove-guardian",
+    "title": "Grove Guardian",
+    "subtitle": "Defend the forest in a third-person action shooter",
+    "year": 2023,
+    "duration": "8 weeks",
+    "teamSize": 3,
+    "role": "Game Design & Programming",
+    "tools": [
+      "Unity",
+      "C#",
+      "Miro"
+    ],
+    "coverImage": "assets/GroveGuardian/OV.png",
+    "shortDescription": "Third-person shooter where you defend an forest, casting abilities with basic attacks to hold back invaders.",
+    "longDescription": "A fast-paced action game where you, the guardian of the forest, must protect it from pesky bugs trying to destroy it. To aid you, the forest grants you 4 abilities.",
+    "responsibilities": [
+      "Designed abilities",
+      "Implemented Code",
+      "Wrote my own Behavior Tree Code for enemy AI",
+      "Co-designed gameplay loop"
+    ],
+    "tags": [
+      "Game Design",
+      "Programming",
+      "Unity",
+      "Pitch"
+    ],
+    "images": [
+      "assets/GroveGuardian/01.png",
+      "assets/GroveGuardian/02.png",
+      "assets/GroveGuardian/03.png",
+      "assets/GroveGuardian/04.png",
+      "assets/GroveGuardian/05.png",
+      "assets/GroveGuardian/06.png"
+    ],
+    "reflection": {
+      "blocks": [
+        {
+          "title": "Original Pitch"
+        },
+        {
+          "text": "The player was meant to play through 5 islands, each one connected to an emotion: sadness, happiness, fear, anger, surprise, and disgust. After completing an island, the player would unlock new abilities. In total, there were 6 abilities for each emotion: one ranged, one melee, one utility, one normal attack, one ultimate ability, and one special ability. The special one was unique, the player cant not use it directly and the forest would provide that ability."
+        },
+        {
+          "text": "Originally, we wanted the forest to act as an AI companion that switched abilities to best help the fighter. For example, if the player was low on health, the forest would switch to the happiness ability and heal them for X amount per second. Sadly, we did not have nearly enough time to implement any of this."
+        },
+        {
+          "text": "Another feature that got cut was the changeable ability system. The idea was that the player could individually pick each ability, allowing for mixes like a fear melee, an anger ranged, a disgust basic, and a surprise ultimate. This would have allowed for some fun customizations."
+        },
+        {
+          "images": [
+            "assets/GroveGuardian/07.png",
+            "assets/GroveGuardian/08.png",
+            "assets/GroveGuardian/09.png"
+          ]
+        },
+        {
+          "title": "The Result"
+        },
+        {
+          "text": "The end product is sadly a very watered-down version of the original concept. Instead of multiple islands, there is just one with a big tree in the middle and a rune underneath that the player needs to protect. Around the island, nests spawn enemy bugs. These nests can only be destroyed once their guardian has been eliminated."
+        },
+        {
+          "text": "There are two special types of enemies: a bigger one that is slower but deals more damage and has more health, and a smaller one that is faster but also deals more damage than the regular enemies. The player only has 4 fixed abilities, and the forest has no special interactions or abilities."
+        },
+        {
+          "text": "I definitely think we overscoped in the beginning, and it is sad to see how our vision turned out."
+        }
+      ]
+    },
+    "links": {}
+  },
+  {
+    "slug": "one-last-quest",
+    "title": "One Last Quest",
+    "subtitle": "Turn-based RPG on a hex grid",
+    "year": 2023,
+    "duration": "7 weeks",
+    "teamSize": 4,
+    "role": "Programming",
+    "tools": [
+      "Unity",
+      "C#",
+      "Miro"
+    ],
+    "coverImage": "assets/OLQ/OV.png",
+    "shortDescription": "Hex-grid, turn-based dungeon crawl where a four-hero party dismantle hordes of undead.",
+    "longDescription": "Embark on an exciting adventure with mighty heroes and dive into an ancient tomb to vanquish the evil lurking within! Control four unique characters, each with their own abilities, which are essential to your success in defeating the darkness that awaits. ",
+    "responsibilities": [
+      "Implemented Code",
+      "Created VFX",
+      "Built Level Editor"
+    ],
+    "tags": [
+      "Programming",
+      "Unity"
+    ],
+    "images": [
+      "assets/OlQ/01.png",
+      "assets/OlQ/02.png",
+      "assets/OlQ/03.png",
+      "assets/OlQ/04.png",
+      "assets/OlQ/05.png",
+      "assets/OlQ/06.png"
+    ],
+    "reflection": {
+      "blocks": [
+        {
+          "title": "My Role"
+        },
+        {
+          "text": "In OLQ I mainly served as the programmer, at least for the actual game. Before even starting this project, one of my co-creators had the idea for the game and we bounced some ideas back and forth. Sadly many of them did not make it into the final version."
+        },
+        {
+          "text": "We originally wanted to create a full dungeon crawler with treasure, resting rooms, people to rescue, and most importantly a very unique ability system. This system consisted of three parts. The first were ability slots: every character started with one basic ability, and throughout the adventure the player could find new ability slots labeled as utility, damage, AOE, etc. The second part were ability shards that could be placed into these slots, for example Fire, Electric, or Speed shards. The third part was the character itself, each with a unique way of casting: the warrior could only affect things within 1 hex, the rogue shot in a straight line, and so on."
+        },
+        {
+          "text": "These three elements would then combine into different abilities for each character, creating a roguelike element to the game. Sadly, this was far too much to implement within the first semester of university."
+        },
+        {
+          "images": [
+            "assets/OlQ/10.png"
+          ]
+        },
+        {
+          "title": "The Game"
+        },
+        {
+          "text": "The game is played with 4 characters. It is turn-based, and each character has a separate turn. On a character’s turn, the player can move them and use one of 4 abilities. Each character is specialized in a specific type of casting."
+        },
+        {
+          "text": "What we landed on was the following: the warrior can affect 2 hexes adjacent to her. The priest has an emanation, meaning everything in a radius of 3 around the character is affected by the spell — with no friendly fire and no healing of enemies. The rogue can only shoot in straight lines, and the mage has massive AOEs in the form of cones and placeable areas."
+        },
+        {
+          "text": "The player needs to beat 5 levels to reach the end boss, who periodically spawns enemies and shoots a space laser to summon them."
+        },
+        {
+          "images": [
+            "assets/OlQ/07.png",
+            "assets/OlQ/08.png",
+            "assets/OlQ/09.png"
+          ]
+        },
+        {
+          "title": "Improvements"
+        },
+        {
+          "text": "Sadly, you can tell that this game was created by first-semester students. The combat and controls are very clunky, the levels feel very samey, and overall the game lacks excitement. More enemy types, abilities, and a UI/UX overhaul would also be needed. But overall, I think it’s a great result for our first attempt."
+        }
+      ]
+    },
+    "links": {}
+  }
+]
