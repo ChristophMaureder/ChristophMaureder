@@ -133,16 +133,16 @@
           "text": "But now imagine this:"
         },
         {
-          "text": "The bard activates Helpful Hand (auto fulfills one spell conditional of his choice) and a Flames hand apears, ready fulfilling the fire condition of the upcomming witch’s spell. He then uses a spell to push the rogue fifteen feet away from the ogre."
+          "text": "The bard activates Helpful Hand (auto fulfills one spell conditional of his choice) and a flaming hand apears, ready to fulfill the fire condition of the upcomming spell of the witch. He then uses a spell to push the rogue fifteen feet away from the ogre."
         },
         {
-          "text": "The rogue reenters the ogre’s reach thanks to the bard, triggering his conditional: Sneak Attack. Because the ogre is within the fighter’s reach, the rogue can uses his conditional on his strikes to aid the fighter’s next attack for free."
+          "text": "The rogue then reenters the ogre’s reach thanks to the bard, triggering his conditional: Sneak Attack(entering enemies reach without having left this turn). Because the ogre is within the fighter’s reach, the rogue can uses her second conditional on her strikes to aid the fighter’s next attack for free."
         },
         {
-          "text": "The fighter, in his special stance that lets him topple enemies if aided by a flanking ally, strikes the ogre. With the rogue’s aid, his conditional triggers and the ogre is pushed back, stumbles over the aiding rogue, and falls prone."
+          "text": "The fighter is in his special stance that lets him topple enemies if he is aided by a flanking ally and strikes the ogre. With the rogue’s aid, his conditional triggers and the ogre is pushed back, stumbles over the aiding rogue, and falls prone."
         },
         {
-          "text": "Finally, the witch casts her spell. A hand of earth rises and squeezes the ogre. Because the enemy is prone, the first conditional triggers: in addition to the damage, the ogre is grabbed until the end of her next turn. Then the earth hand bursts into flames thanks to the bard’s helping hand. Now the ogre is covered in molten rock and takes persistent fire damage."
+          "text": "Finally, the witch casts her spell. A hand of rises from the earth and squeezes the ogre, damageing it. Because the enemy is prone, the first conditional of the spell triggers: in addition to the damage, the ogre is grabbed until the end of her next turn. Then the earth hand bursts into flames thanks to the bard’s helping hand. Now the ogre is covered in molten rock and takes persistent fire damage."
         },
         {
           "text": "I might be biased here, but one sounds more exciting, cinematic, and satisfying than the other."
@@ -166,7 +166,7 @@
           "text": "These weaknesses can be recalled in combat by the players, and depending on the result they gain access to one, two, or all three weaknesses. For boss monsters this works differently. They have more weaknesses that the heroes ideally need to figure out before the fight and plan accordingly. Need to deal fire damage? Find a potion to coat the fighter’s blade. Need to make loud noises? Hire a bard and give him a megaphone. Need to disable one of its core abilities? Find a way to do it."
         },
         {
-          "text": "This, in combination with conditionals, should ensure that no combat feels the same. Players should feel excited for combat, not just another round of “attack -> miss, attack again -> hit, 5 damage, raise shield... next in like...”"
+          "text": "This, in combination with conditionals, should ensure that no combat feels the same. Players should feel excited for combat, not just another round of “attack -> miss, attack again -> hit, 5 damage, raise shield... next in line...”"
         },
         {
           "images": []
