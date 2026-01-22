@@ -9,15 +9,21 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="back-link" aria-label="Back to projects">← Back</a>
-      <h1 class="brand small">
-        <svg class="pacman" viewBox="0 0 100 100" aria-hidden="true">
-          <circle cx="50" cy="50" r="48" fill="currentColor"></circle>
-          <polygon points="50,50 100,25 100,75" fill="var(--bg)"></polygon>
-        </svg>
-        <span>hristoph Maureder</span>
-      </h1>
+    <div class="container header-row">
+      <div class="header-left">
+        <a href="index.html" class="back-link" aria-label="Back to projects">← Back</a>
+        <h1 class="brand small">
+          <svg class="pacman" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="48" fill="currentColor"></circle>
+            <polygon points="50,50 100,25 100,75" fill="var(--bg)"></polygon>
+          </svg>
+          <span>hristoph Maureder</span>
+        </h1>
+      </div>
+      <div class="header-contact">
+        <a class="btn" href="https://www.linkedin.com/in/christoph-maureder" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn js-copy-email" href="#" data-email="maureder.christoph@gmail.com">Copy Email</a>
+      </div>
     </div>
   </header>
 
@@ -115,6 +121,7 @@
     }
 
     (async function init() {
+      attachCopyEmail(); // Enable header copy button immediately
       try {
         const slugParam = getParam('slug');
         const slug = decodeURIComponent((slugParam || '').trim());
@@ -308,9 +315,6 @@
           }
         }
 
-        // Copy email button
-        attachCopyEmail();
-
       } catch (err) {
         console.error(err);
         document.getElementById('content').innerHTML = '<p>Could not load project. Make sure you are serving the site over HTTP.</p>';
@@ -336,8 +340,14 @@
       toast.textContent = text;
       document.body.appendChild(toast);
       const r = anchor.getBoundingClientRect();
+      const inHeader = anchor.closest('.site-header');
       toast.style.left = (r.left + r.width/2) + 'px';
-      toast.style.top  = (r.top - 8) + 'px';
+      if (inHeader) {
+        toast.style.top = r.bottom + 'px';
+        toast.classList.add('below');
+      } else {
+        toast.style.top = r.top + 'px';
+      }
       requestAnimationFrame(() => toast.classList.add('is-visible'));
       setTimeout(() => { toast.classList.remove('is-visible'); setTimeout(() => toast.remove(), 200); }, 1200);
     }

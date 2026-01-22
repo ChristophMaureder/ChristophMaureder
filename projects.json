@@ -1,8 +1,82 @@
 [
   {
+    "slug": "about-me",
+    "title": "Christoph Maureder",
+    "subtitle": "Human v24.0",
+    "year": 2001,
+    "duration": "24 years (ongoing)",
+    "teamSize": 2,
+    "role": "The Product",
+    "tools": [
+      "Stork..."
+    ],
+    "coverImage": "assets/Christoph.png",
+    "shortDescription": "A project 24 years in the making. Specializes in game and systems design and very efficient at turning energy drinks into code.",
+    "longDescription": "This is a passion project that's been in continuous development since 2001. What started as a simple prototype by two ambitious developers (Mom & Dad) has evolved into a fully-featured human.\n\nOriginally compiled in Austria, this project has undergone extensive development in various environments. The first major DLC was a coding one by Austrian Developers and a second DLC in Game Design from developers in Berlin. The result? A system highly optimized for creative problem solving and collaborative development.",
+    "tags": [
+      "About Me"
+    ],
+    "responsibilities": [
+      "Game Design Module -> Designs systems, content and character (ready to learn why half of them are terrible ideas)",
+      "Collaboration Protocol → Builds better stuff with others, has more fun doing it too",
+      "Creative Problem Solving -> Solves problems that shouldn't exist with solutions that definitely shouldn't work",
+      "Learning Algorithm -> Self-learning system powered by caffeine, curiosity, and sheer stubbornness",
+      "Code Implementation -> Turns designs into (somewhat) functional code"
+    ],
+    "images": [],
+    "reflection": {
+      "blocks": [
+        {
+          "title": "Changelog"
+        },
+        {
+          "text": "v24.0:  Finished game design specialization DLC. Current stable release. Actively seeking new design opportunities."
+        },
+        {
+          "text": "v21.0:   Started game design DLC development at University of Applied Sciences - Game Design"
+        },
+        {
+          "text": "v18.0:   First experiences in gamedev."
+        },
+        {
+          "text": "v15.0:   Initial exposure to coding and development."
+        },
+        {
+          "text": "v4.0:   First video game experience. System became permanently gaming oriented."
+        },
+        {
+          "text": "v0.0:   Initial release. Basic functionality only. Required constant supervision and maintenance."
+        },
+        {
+          "title": "Known Bugs"
+        },
+        {
+          "bullets": [
+            "Requires external structure for effective time management",
+            "May pursue side quests unrelated to current priorities when curiosity is triggered and not restrained",
+            "Reluctant to abandon ideas because of difficulty. Wants to first solve the problem before abandoning it"
+          ]
+        },
+        {
+          "title": "Roadmap"
+        },
+        {
+          "bullets": [
+            "Git gud at game design",
+            "Contribute to games that bring joy to players",
+            "Collaborate with other design focused devs and make cool shit together"
+          ]
+        }
+      ]
+    },
+    "links": {
+
+    }
+  },
+  {
     "slug": "statforged",
     "title": "Statforged",
-    "subtitle": "Evolving-Tower defense",
+    "subtitle": "Evolving Tower Defense",
     "year": 2024,
     "duration": "3 weeks",
     "teamSize": 1,
@@ -54,7 +128,7 @@
           ]
         },
         {
-          "title": "Upgread Problems"
+          "title": "Upgrade Problems"
         },
         {
           "text": "The biggest problem is the timing of the tower. I wanted to create a tower defense game with a fixed time and no downtime. At the time I was playing a lot of Vampire Survivors and was inspired by its fixed game length. I always disliked the prep phase in tower defense games — I wanted action all the time. That is why I created a wave system that never stops: as soon as one ends, the next begins."
@@ -97,7 +171,7 @@
   {
     "slug": "Catalyst",
     "title": "Catalyst (TTRPG)",
-    "subtitle": "Tactical combat focused on teamwork and player freedom.",
+    "subtitle": "Tactical combat with focus on teamwork and player freedom.",
     "year": 2025,
     "duration": "Ongoing",
     "teamSize": 2,
@@ -109,7 +183,7 @@
     ],
     "coverImage": "assets/Catalyst.png",
     "shortDescription": "Tactical combat focused on teamwork and player freedom",
-    "longDescription": "Catalyst is very much inspired by Pathfinder 2e and Dungeons & Dragons 5e. It tries to create a compact system that can be expanded to fit many different settings. One of the core concepts of the game are conditionals. Most actions have one or more conditionals that empower that action. This is meant to create more tactical combat that rewards communication and teamwork.",
+    "longDescription": "Catalyst is very much inspired by Pathfinder 2e and Dungeons & Dragons 5e. It tries to create a compact system that can be expanded to fit many different settings. One of the core concepts of the game is conditionals. Most actions have one or more conditionals that empower that action. This is meant to create more tactical combat that rewards communication and teamwork.",
     "tags": [
       "TTRPG",
       "Non-Video Game",
@@ -133,16 +207,16 @@
           "text": "But now imagine this:"
         },
         {
-          "text": "The bard activates Helpful Hand (auto fulfills one spell conditional of his choice) and a flaming hand apears, ready to fulfill the fire condition of the upcomming spell of the witch. He then uses a spell to push the rogue fifteen feet away from the ogre."
+          "text": "The bard activates Helpful Hand (auto fulfills one spell conditional of his choice) and a flaming hand appears, ready to fulfill the fire condition of the upcoming spell of the witch. He then uses a spell to push the rogue fifteen feet away from the ogre."
         },
         {
-          "text": "The rogue then reenters the ogre’s reach thanks to the bard, triggering his conditional: Sneak Attack(entering enemies reach without having left this turn). Because the ogre is within the fighter’s reach, the rogue can uses her second conditional on her strikes to aid the fighter’s next attack for free."
+          "text": "The rogue then reenters the ogre’s reach thanks to the bard, triggering her conditional: Sneak Attack (entering enemy's reach without having left this turn). Because the ogre is within the fighter’s reach, the rogue can use her second conditional on her strikes to aid the fighter’s next attack for free."
         },
         {
           "text": "The fighter is in his special stance that lets him topple enemies if he is aided by a flanking ally and strikes the ogre. With the rogue’s aid, his conditional triggers and the ogre is pushed back, stumbles over the aiding rogue, and falls prone."
         },
         {
-          "text": "Finally, the witch casts her spell. A hand of rises from the earth and squeezes the ogre, damageing it. Because the enemy is prone, the first conditional of the spell triggers: in addition to the damage, the ogre is grabbed until the end of her next turn. Then the earth hand bursts into flames thanks to the bard’s helping hand. Now the ogre is covered in molten rock and takes persistent fire damage."
+          "text": "Finally, the witch casts her spell. A hand rises from the earth and squeezes the ogre, damaging it. Because the enemy is prone, the first conditional of the spell triggers: in addition to the damage, the ogre is grabbed until the end of her next turn. Then the earth hand bursts into flames thanks to the bard’s helping hand. Now the ogre is covered in molten rock and takes persistent fire damage."
         },
         {
           "text": "I might be biased here, but one sounds more exciting, cinematic, and satisfying than the other."
@@ -154,7 +228,7 @@
           ]
         },
         {
-          "title": "Mosters"
+          "title": "Monsters"
         },
         {
           "text": "Another thing that bothers me about PF2 and D&D is the lack of variety in combat. The monsters attack, the allies attack, and for the most part you could swap out one monster for another of the same strength and the strategy would not really change. Yes, the monster might have one or two unique abilities (at least in PF2 (let’s not even talk about D&D…)), but most of the time it is just “strike plus.” Nothing the players can really play around."
@@ -175,13 +249,13 @@
           "title": "Crits"
         },
         {
-          "text": "Everyone loves crits! What if I told you that you can crit twice on one attack or even three time? Sounds fun? Then you might be interested in Catalyst’s agility martials."
+          "text": "Everyone loves crits! What if I told you that you can crit twice on one attack or even three times? Sounds fun? Then you might be interested in Catalyst’s agility martials."
         },
         {
           "text": "In Catalyst, you add your Strength to damage and your Coordination to hit. On top of that, there are weapons with the Lethality X trait. This trait says that if you hit an enemy, you reduce the range you need to crit by X. The normal crit range is 10. So if the AC is 25 and you roll a 35, you crit. But if the AC is 25 and you roll a 35 with a Lethality 5 weapon, you double crit dealing quadruple your initial damage."
         },
         {
-          "text": "The tradeoff is that these Lethality weapons have a lower base damage die, usually 1d4s or 1d6s compared to the d8 and d10 weapons Strength users rely on. d12s are very rare in the system because of the inherent inconsistency in the rolea. Not to say d10s aren't, but you have to start somewhere."
+          "text": "The tradeoff is that these Lethality weapons have a lower base damage die, usually 1d4s or 1d6s compared to the d8 and d10 weapons Strength users rely on. d12s are very rare in the system because of the inherent inconsistency in the rolls. Not to say d10s aren't, but you have to start somewhere."
         },
         {
           "images": [
@@ -208,10 +282,10 @@
     ],
     "coverImage": "assets/RR1.png",
     "shortDescription": "Side-view, party-based combat inspired by Darkest Dungeon. Cast spells via a node-based rune grid.",
-    "longDescription": "Rune Run combines classic side-view turn combat with a modular spell-crafting system. You place runes on a small grid to shape damage, utility, and status effects - encouraging experimentation and expressive builds.",
+    "longDescription": "Rune Run combines classic side-view turn-based combat with a modular spell-crafting system. You place runes on a small grid to shape damage, utility, and status effects - encouraging experimentation and expressive builds.",
     "responsibilities": [
       "Co-pitched the core concept",
-      "Implemented the games code",
+      "Implemented the game's code",
       "Participated in all design meetings, providing feedback and ideas"
     ],
     "tags": [
@@ -255,7 +329,7 @@
           "text": "After we went into development, we created a prototype. However, after receiving less-than-great feedback during playtests, we decided to start over and changed the combat to a 2D Darkest Dungeon-inspired combat with a 'rune placement on a grid' system. We increased the number of characters to five, although the player can only control one. Each character had an associated element that influenced the area of the board they were standing on."
         },
         {
-          "text": "When a rune is placed on the board, the top two elements that have been, are used to determine the secondary effect of the spell. Each element had a unique effect when combined with another, so for example, if Fire and Nature were combined, the target would receive DoT damage. This system dose not distinguish between friend and foe, meaning you can give enemies damage reduction or give allies fire vulnerability."
+          "text": "When a rune is placed on the board, the top two elements that have been placed are used to determine the secondary effect of the spell. Each element had a unique effect when combined with another, so for example, if Fire and Nature were combined, the target would receive DoT damage. This system does not distinguish between friend and foe, meaning you can give enemies damage reduction or give allies fire vulnerability."
         },
         {
           "images": [
@@ -286,7 +360,7 @@
           "text": "I think we had too many people with too many different visions for the game. Personally, I don’t like the final direction we went in. The passive bonuses from the elements are not really noticeable, and there isn’t the 'create your own spell' feeling we were originally excited about. The switch to 2D was good, though, as it simplified combat both in coding and gameplay."
         },
         {
-          "text": "I’m still not sure if the original system could have worked if we had tested it in a different setting. Instead of starting with a 2×3 grid, we began with a 4×5 grid, which didn’t give the player enough time to figure out what the nodes were. On top of that, we playtested at school where players had limited time and were rushed from game to game. I think the game would have benefited from slower, more focused playtest."
+          "text": "I’m still not sure if the original system could have worked if we had tested it in a different setting. Instead of starting with a 2×3 grid, we began with a 4×5 grid, which didn’t give the player enough time to figure out what the nodes were. On top of that, we playtested at school where players had limited time and were rushed from game to game. I think the game would have benefited from slower, more focused playtests."
         },
         {
           "text": "Another big problem was workload distribution. We had one manager, one coder (me), six artists, and six designers. Every designer wanted to create their own system, so we ended up with many small systems that didn’t really work well together."
@@ -304,7 +378,7 @@
   {
     "slug": "lor-cards",
     "title": "Legends of Runeterra - Card Packages",
-    "subtitle": "Custom design champion packages",
+    "subtitle": "Custom designed champion packages",
     "year": 2025,
     "duration": "Varied",
     "teamSize": 1,
@@ -314,7 +388,7 @@
     ],
     "coverImage": "assets/LOR/OV.png",
     "shortDescription": "My custom LoR-style card design.",
-    "longDescription": "These are cards designed for the card game Legends of Runeterra from Riot Games. A champion was chosen by a friends and myselfe, and we each had around 3–4 hours to create a champion package. The only requirements were a level one and tow champion card and a champion spell while the rest was up to us. My approach was to go with the more extreme ideas to see if it could work. These cards would definitely need a lot of balance changes, and some might even require complete rewrites, but my goal was more about exploring an idea and seeing what came out of it. When I created these cards, I didn’t anticipate publishing them, so credits for the artworks are missing. (Please contact me if I used your artwork and you would like me to remove it.)",
+    "longDescription": "These are cards designed for the card game Legends of Runeterra from Riot Games. A champion was chosen by friends and myself, and we each had around 3–4 hours to create a champion package. The only requirements were a level one and two champion card and a champion spell while the rest was up to us. My approach was to go with the more extreme ideas to see if it could work. These cards would definitely need a lot of balance changes, and some might even require complete rewrites, but my goal was more about exploring an idea and seeing what came out of it. When I created these cards, I didn’t anticipate publishing them, so credits for the artworks are missing. (Please contact me if I used your artwork and you would like me to remove it.)",
     "tags": [
       "Game Design",
       "Non-Video Game"
@@ -326,7 +400,7 @@
         "title": "Xayah & Rakan",
         "subtitle": "Combo",
         "year": 2025,
-        "overview": "Trigger flow to create values and empower Xayah/Rakan",
+        "overview": "Trigger flow to create value and empower Xayah/Rakan",
         "notes": "This is the most recent package I designed. I am not sure if I like how it turned out, but it is definitely interesting. I think Xayah and Rakan don’t really fit into Ionia, or at least they don’t want to be played with regular Ionian cards. They feel kind of forced into Noxus to gain Overwhelm. The support package is sadly only there to create more flow cards, since in the current base game it is very hard to play a deck fully based on Flow. I really like some of the designs, but I think Xayah and Rakan need a bit more tweaking to be in the right spot.",
         "tags": [],
         "coverImage": "assets/LOR/Xayah/OV.png",
@@ -413,7 +487,7 @@
         "subtitle": "Midrange, positioning",
         "year": 2025,
         "overview": "New keyword limits the number of units in an attack to three, but grants them stat bonuses.",
-        "notes": "The whole package revolves around the Formation keyword, which limits the player’s attack to three units otherwise, their keywords and effects are disabled. Most cards either want to be blocked and have a 'taunt' mechanic built in, while others debuff or damage all blocking enemies. Wukong is the most important unit when he levels up, he deals 2 damage to all blocking enemies and creates a clone of himselfe. The concept doesn’t fit very well into Ionia and would be more to home in Demacia.",
+        "notes": "The whole package revolves around the Formation keyword, which limits the player’s attack to three units; otherwise, their keywords and effects are disabled. Most cards either want to be blocked and have a 'taunt' mechanic built in, while others debuff or damage all blocking enemies. Wukong is the most important unit when he levels up, he deals 2 damage to all blocking enemies and creates a clone of himself. The concept doesn’t fit very well into Ionia and would be more at home in Demacia.",
         "tags": [],
         "coverImage": "assets/LOR/Wukong/OV.png",
         "cards": [
@@ -467,7 +541,7 @@
               "title": "Low Cost Cards"
             },
             {
-              "text": "A problem, or at least something I don’t particularly like, is that due to Formation, all the low-cost cards only have 0 or 1 power. This might be fine in terms of balancing, but it would need playtesting to see if this potential frustration is counteracted by the strength of Formation. The 6-cost Stick Sage isa good card to block with though 6 is very late and it has an in built drawback. All the other cards aren’t great defensive options from the start. This would be fine if it were a combo deck, but it currently plays more like a midrange deck."
+              "text": "A problem, or at least something I don’t particularly like, is that due to Formation, all the low-cost cards only have 0 or 1 power. This might be fine in terms of balancing, but it would need playtesting to see if this potential frustration is counteracted by the strength of Formation. The 6-cost Stick Sage is a good card to block with though 6 is very late and it has a built-in drawback. All the other cards aren’t great defensive options from the start. This would be fine if it were a combo deck, but it currently plays more like a midrange deck."
             },
             {
               "images": [
@@ -504,7 +578,7 @@
               "image": "assets/LOR/Wukong/03.png"
             },
             {
-              "title": "Troblesome Monkey"
+              "title": "Troublesome Monkey"
             },
             {
               "text": "This card is very OP. It often lets your strongest unit attack without having to worry about being blocked by a strong enemy. That enemy then gets debuffed or damaged by Wukong or the Pattern Spirit and the card just recalls itself."
@@ -558,7 +632,7 @@
         "subtitle": "Combo, scaling",
         "year": 2025,
         "overview": "Playing around with equipping and unequipping units to give them stat buffs.",
-        "notes": "Here I went all in on the vision of suppressing one’s power. The core mechanic, Release, grants units with the keyword power for each time they have been unequipped. Paired with Noxus, where Overwhelm grants are easy to come by, the attack stacking and the health regeneration from equipment swapping should create an interesting playstyle. I think I would buff the health grants from the equipment and also increase the attack decreases to further lean into this duality. Though, then it would feel less like Noxus and might be more at home in Targon. The system is maybe a bit tricky to place. As it is now, the units don’t have enough defense to fully benefit from the equipment healing or the stacking attack mechanic. I do think there’s a very interesting core here though it would need some changed.",
+        "notes": "Here I went all in on the vision of suppressing one’s power. The core mechanic, Release, grants units with the keyword power for each time they have been unequipped. Paired with Noxus, where Overwhelm grants are easy to come by, the attack stacking and the health regeneration from equipment swapping should create an interesting playstyle. I think I would buff the health grants from the equipment and also increase the attack decreases to further lean into this duality. Though, then it would feel less like Noxus and might be more at home in Targon. The system is maybe a bit tricky to place. As it is now, the units don’t have enough defense to fully benefit from the equipment healing or the stacking attack mechanic. I do think there’s a very interesting core here though it would need some changes.",
         "tags": [],
         "coverImage": "assets/LOR/Briar/OV.png",
         "cards": [
@@ -688,7 +762,7 @@
       },
       {
         "slug": "gamma",
-        "title": "Quiana",
+        "title": "Qiyana",
         "subtitle": "Combo, RNG Manipulation",
         "year": 2024,
         "overview": "Generates cards based on the last cards played with Qiyana as the prime value engine.",
@@ -779,7 +853,7 @@
       "Miro"
     ],
     "coverImage": "assets/GroveGuardian/OV.png",
-    "shortDescription": "Third-person shooter where you defend an forest, casting abilities with basic attacks to hold back invaders.",
+    "shortDescription": "Third-person shooter where you defend a forest, casting abilities with basic attacks to hold back invaders.",
     "longDescription": "A fast-paced action game where you, the guardian of the forest, must protect it from pesky bugs trying to destroy it. To aid you, the forest grants you 4 abilities.",
     "responsibilities": [
       "Designed abilities",
@@ -807,7 +881,7 @@
           "title": "Original Pitch"
         },
         {
-          "text": "The player was meant to play through 5 islands, each one connected to an emotion: sadness, happiness, fear, anger, surprise, and disgust. After completing an island, the player would unlock new abilities. In total, there were 6 abilities for each emotion: one ranged, one melee, one utility, one normal attack, one ultimate ability, and one special ability. The special one was unique, the player cant not use it directly and the forest would provide that ability."
+          "text": "The player was meant to play through 6 islands, each one connected to an emotion: sadness, happiness, fear, anger, surprise, and disgust. After completing an island, the player would unlock new abilities. In total, there were 6 abilities for each emotion: one ranged, one melee, one utility, one normal attack, one ultimate ability, and one special ability. The special one was unique, the player can't use it directly and the forest would provide that ability."
         },
         {
           "text": "Originally, we wanted the forest to act as an AI companion that switched abilities to best help the fighter. For example, if the player was low on health, the forest would switch to the happiness ability and heal them for X amount per second. Sadly, we did not have nearly enough time to implement any of this."
@@ -852,7 +926,7 @@
       "Miro"
     ],
     "coverImage": "assets/OLQ/OV.png",
-    "shortDescription": "Hex-grid, turn-based dungeon crawl where a four-hero party dismantle hordes of undead.",
+    "shortDescription": "Hex-grid, turn-based dungeon crawl where a four-hero party dismantles hordes of undead.",
     "longDescription": "Embark on an exciting adventure with mighty heroes and dive into an ancient tomb to vanquish the evil lurking within! Control four unique characters, each with their own abilities, which are essential to your success in defeating the darkness that awaits. ",
     "responsibilities": [
       "Implemented Code",

@@ -9,15 +9,21 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
-      <a href="project.html?slug=lor-cards" class="back-link js-back" aria-label="Back to LoR overview">← Back</a>
-      <h1 class="brand small">
-        <svg class="pacman" viewBox="0 0 100 100" aria-hidden="true">
-          <circle cx="50" cy="50" r="48" fill="currentColor"></circle>
-          <polygon points="50,50 100,25 100,75" fill="var(--bg)"></polygon>
-        </svg>
-        <span>hristoph Maureder</span>
-      </h1>
+    <div class="container header-row">
+      <div class="header-left">
+        <a href="project.html?slug=lor-cards" class="back-link js-back" aria-label="Back to LoR overview">← Back</a>
+        <h1 class="brand small">
+          <svg class="pacman" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="48" fill="currentColor"></circle>
+            <polygon points="50,50 100,25 100,75" fill="var(--bg)"></polygon>
+          </svg>
+          <span>hristoph Maureder</span>
+        </h1>
+      </div>
+      <div class="header-contact">
+        <a class="btn" href="https://www.linkedin.com/in/christoph-maureder" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn js-copy-email" href="#" data-email="maureder.christoph@gmail.com">Copy Email</a>
+      </div>
     </div>
   </header>
 
@@ -151,8 +157,38 @@
       return host;
     }
 
+    function attachCopyEmail() {
+      document.querySelectorAll('.js-copy-email').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const email = btn.dataset.email || 'maureder.christoph@gmail.com';
+          try { await navigator.clipboard.writeText(email); }
+          catch (err) { const ta = document.createElement('textarea'); ta.value = email; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); }
+          showCopyToast(btn, 'Copied!');
+        });
+      });
+    }
+    function showCopyToast(anchor, text) {
+      const toast = document.createElement('div');
+      toast.className = 'copy-pop';
+      toast.textContent = text;
+      document.body.appendChild(toast);
+      const r = anchor.getBoundingClientRect();
+      const inHeader = anchor.closest('.site-header');
+      toast.style.left = (r.left + r.width/2) + 'px';
+      if (inHeader) {
+        toast.style.top = r.bottom + 'px';
+        toast.classList.add('below');
+      } else {
+        toast.style.top = r.top + 'px';
+      }
+      requestAnimationFrame(() => toast.classList.add('is-visible'));
+      setTimeout(() => { toast.classList.remove('is-visible'); setTimeout(() => toast.remove(), 200); }, 1200);
+    }
+
     (async function init() {
       try {
+        attachCopyEmail();
         const projSlug = decodeURIComponent((getParam('project') || '').trim());
         const pkgSlug  = decodeURIComponent((getParam('pkg') || '').trim());
         const projects = await loadProjects();

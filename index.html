@@ -10,13 +10,19 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <h1 class="brand">
-        <svg class="pacman" viewBox="0 0 100 100" aria-hidden="true">
-          <circle cx="50" cy="50" r="48" fill="currentColor"></circle>
-          <polygon points="50,50 100,25 100,75" fill="var(--bg)"></polygon>
-        </svg>
-        <span>hristoph Maureder</span>
-      </h1>
+      <div class="header-row">
+        <h1 class="brand">
+          <svg class="pacman" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="48" fill="currentColor"></circle>
+            <polygon points="50,50 100,25 100,75" fill="var(--bg)"></polygon>
+          </svg>
+          <span>hristoph Maureder</span>
+        </h1>
+        <div class="header-contact">
+          <a class="btn" href="https://www.linkedin.com/in/christoph-maureder" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn js-copy-email" href="#" data-email="maureder.christoph@gmail.com">Copy Email</a>
+        </div>
+      </div>
       <p class="tagline">Character & Systems Designer · Designer Who Codes · Curious Human</p>
       <div class="controls">
         <div id="tagbar" class="tagbar" aria-label="Filter by tag"></div>
@@ -157,8 +163,14 @@
       toast.textContent = text;
       document.body.appendChild(toast);
       const r = anchor.getBoundingClientRect();
+      const inHeader = anchor.closest('.site-header');
       toast.style.left = (r.left + r.width/2) + 'px';
-      toast.style.top  = (r.top - 8) + 'px';
+      if (inHeader) {
+        toast.style.top = r.bottom + 'px';
+        toast.classList.add('below');
+      } else {
+        toast.style.top = r.top + 'px';
+      }
       requestAnimationFrame(() => toast.classList.add('is-visible'));
       setTimeout(() => {
         toast.classList.remove('is-visible');
